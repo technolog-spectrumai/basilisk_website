@@ -50,7 +50,7 @@
     </button>
   </nav>
 </header>
-
+<main>
   <!-- Hero -->
   <section class="relative h-screen bg-cover bg-center flex items-center" :class="dark ? 'bg-[url(https://i.ibb.co/1f0q6Nzy/banner-basilisk.png)]' : 'bg-[url(https://i.ibb.co/ycWmMndL/basilisk-light.png)]'">
     <div class="absolute inset-0 bg-blue-300 bg-opacity-20 mix-blend-multiply backdrop-blur-sm"></div>
@@ -102,9 +102,106 @@
   </section>
 
 
+<section
+  id="technology"
+  :class="dark ? 'py-20 bg-gray-900' : 'py-20 bg-white'"
+  class="transition-colors duration-300"
+>
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h3 
+      :class="dark ? 'text-indigo-400' : 'text-indigo-800'" 
+      class="text-3xl sm:text-4xl font-bold mb-8"
+    >
+      Driven by Intelligence
+    </h3>
+    <p 
+      :class="dark ? 'text-gray-300' : 'text-gray-700'" 
+      class="text-base sm:text-lg mb-6"
+    >
+      Basilisk drones are more than flying machines—they're autonomous agents. Built to sense, decide, and act.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-400' : 'text-gray-600'" 
+      class="text-sm sm:text-base mb-4"
+    >
+      From sensor fusion to strategic rerouting, our systems operate with awareness at their core. Each aircraft processes terrain, flight corridors, and environmental signals with embedded AI tuned for mission assurance.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-500' : 'text-gray-500'" 
+      class="text-sm sm:text-base italic"
+    >
+      Engineered to adapt. Designed to trust.
+    </p>
+  </div>
+</section>
 
+<section
+  id="platform"
+  :class="dark ? 'py-20 bg-gray-950' : 'py-20 bg-indigo-50'"
+  class="transition-colors duration-300"
+>
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 
+      :class="dark ? 'text-indigo-400' : 'text-indigo-800'" 
+      class="text-3xl sm:text-4xl font-bold mb-8"
+    >
+      Our Platform in Flight
+    </h3>
+    <p 
+      :class="dark ? 'text-gray-300' : 'text-gray-700'" 
+      class="text-base sm:text-lg mb-6"
+    >
+      Every Basilisk drone connects edge intelligence with global visibility.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-400' : 'text-gray-600'" 
+      class="text-sm sm:text-base mb-6"
+    >
+      Flight performance, security frameworks, vision processing, and cloud analytics come together to create seamless airspace orchestration. Behind every mission is a platform designed to evolve.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-500' : 'text-gray-500'" 
+      class="text-sm sm:text-base italic"
+    >
+      Real-time awareness. Uncompromising control.
+    </p>
+  </div>
+</section>
 
-  <!-- Footer (hidden on small screens) -->
+<section id="about"
+  :class="dark ? 'py-20 bg-gray-900' : 'py-20 bg-white'"
+  class="transition-colors duration-300"
+>
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 
+      :class="dark ? 'text-indigo-400' : 'text-indigo-800'" 
+      class="text-3xl sm:text-4xl font-bold mb-8"
+    >
+      Smarter Skies. Safer Systems.
+    </h3>
+    <p 
+      :class="dark ? 'text-gray-300' : 'text-gray-700'" 
+      class="text-base sm:text-lg mb-6"
+    >
+      At Basilisk Systems, we engineer aerial intelligence built on trust. Each aircraft is an evolution in progress—designed to fly smarter, adapt faster, and perform securely.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-400' : 'text-gray-600'" 
+      class="text-sm sm:text-base mb-6"
+    >
+      Our platform blends advanced drones, multimodal sensors, and intelligent flight software with cloud-based insights and real-time responsiveness. Whether navigating autonomous missions or monitoring high-priority assets, every system is aligned for accuracy, continuity, and control.
+    </p>
+    <p 
+      :class="dark ? 'text-gray-500' : 'text-gray-500'" 
+      class="text-sm sm:text-base italic"
+    >
+      Vision meets precision. Sensors meet strategy. Data meets airspace.
+    </p>
+  </div>
+</section>
+
+</main>
+
 <!-- Footer (hidden on small screens) -->
 <footer
   class="py-12 transition-colors duration-300"
