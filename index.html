@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Basilisk Systems</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
@@ -15,22 +15,41 @@
   class="font-sans transition-colors duration-300"
 >
   <!-- Navbar -->
-  <header class="px-4 py-5 flex justify-between items-center" :class="dark ? 'bg-gray-900 text-gray-300 shadow' : 'bg-blue-900 text-indigo-100 shadow'">
-    <div class="flex items-center gap-3">
-      <img :src="dark ? 'https://i.ibb.co/sd921Mp6/basilisk.png' : 'https://i.ibb.co/MDBHQVJc/basilisk-light-logo2.png'" alt="Basilisk Logo"
-      :class="dark ? 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(140,116,246,0.8)]' : 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(196,201,252,0.8)]'" />
-      <h1 :class="dark ? 'text-indigo-400' : 'text-indigo-200'" class="text-4xl sm:text-5xl font-extrabold">Basilisk Systems</h1>
-    </div>
-    <nav class="flex flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 text-xl sm:text-2xl">
-      <a href="#services" :class="dark ? 'text-gray-300' : 'text-indigo-100'" class="hover:text-indigo-400">Services</a>
-      <a href="#technology" :class="dark ? 'text-gray-300' : 'text-indigo-100'" class="hover:text-indigo-400">Technology</a>
-      <a href="#platform" :class="dark ? 'text-gray-300' : 'text-indigo-100'" class="hover:text-indigo-400">Platform</a>
-      <a href="#about" :class="dark ? 'text-gray-300' : 'text-indigo-100'" class="hover:text-indigo-400">About</a>
+<header x-data="{ open: false }" class="relative px-4 py-5 flex justify-between items-center"
+ :class="dark ? 'bg-gray-900 text-gray-300 shadow' : 'bg-blue-900 text-indigo-100 shadow'">
+  <div class="flex items-center gap-3">
+    <img :src="dark ? 'https://i.ibb.co/sd921Mp6/basilisk.png' : 'https://i.ibb.co/MDBHQVJc/basilisk-light-logo2.png'" alt="Basilisk Logo"
+         :class="dark ? 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(140,116,246,0.8)]' : 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(196,201,252,0.8)]'" />
+    <h1 :class="dark ? 'text-indigo-400' : 'text-indigo-200'" class="text-4xl sm:text-5xl font-extrabold">Basilisk Systems</h1>
+  </div>
+
+  <!-- Hamburger Button -->
+  <button @click="open = !open" class="sm:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">
+    <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
+  </button>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden sm:flex sm:flex-row sm:space-x-6 text-xl sm:text-2xl items-center">
+    <a href="#services" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Services</a>
+    <a href="#technology" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Technology</a>
+    <a href="#platform" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Platform</a>
+    <a href="#about" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">About</a>
     <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition" :aria-label="dark ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
       <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
     </button>
-        </nav>
-  </header>
+  </nav>
+
+  <!-- Mobile Dropdown Navigation -->
+  <nav x-show="open" x-transition x-cloak class="absolute top-full left-0 w-full flex flex-col bg-inherit space-y-4 text-xl text-center mt-4 px-4 sm:hidden z-50">
+    <a href="#services" class="hover:text-indigo-400">Services</a>
+    <a href="#technology" class="hover:text-indigo-400">Technology</a>
+    <a href="#platform" class="hover:text-indigo-400">Platform</a>
+    <a href="#about" class="hover:text-indigo-400">About</a>
+    <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition mx-auto" :aria-label="dark ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+      <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    </button>
+  </nav>
+</header>
 
   <!-- Hero -->
   <section class="relative h-screen bg-cover bg-center flex items-center" :class="dark ? 'bg-[url(https://i.ibb.co/1f0q6Nzy/banner-basilisk.png)]' : 'bg-[url(https://i.ibb.co/ycWmMndL/basilisk-light.png)]'">
