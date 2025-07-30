@@ -24,12 +24,12 @@
   </div>
 
   <!-- Hamburger Button -->
-  <button @click="open = !open" class="sm:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">
+  <button @click="open = !open" class="sm:hidden text-white text-2xl focus:outline-none" aria-label="Toggle navigation">
     <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
   </button>
 
   <!-- Desktop Navigation -->
-  <nav class="hidden sm:flex sm:flex-row sm:space-x-6 text-xl sm:text-2xl items-center">
+  <nav class="hidden sm:flex sm:flex-row sm:space-x-6 sm:text-xl items-center">
     <a href="#services" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Services</a>
     <a href="#technology" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Technology</a>
     <a href="#platform" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">Platform</a>
