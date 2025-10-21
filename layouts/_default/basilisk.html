@@ -87,6 +87,45 @@
   </div>
 </section>
 
+<!-- Services -->
+<section id="services" :class="dark ? 'py-20 bg-gray-950' : 'py-20 bg-indigo-100'" class="transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 :class="dark ? 'text-indigo-400' : 'text-indigo-800'" class="text-4xl sm:text-5xl font-bold mb-10">
+      {{ i18n "services_title" }}
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+      <!-- Card 1 -->
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          {{ i18n "service_transport_title" }}
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          {{ i18n "service_transport_desc" }}
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          {{ i18n "service_dualuse_title" }}
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          {{ i18n "service_dualuse_desc" }}
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          {{ i18n "service_ai_title" }}
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          {{ i18n "service_ai_desc" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </main>
 
 <!-- Footer -->

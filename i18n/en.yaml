@@ -49,3 +49,19 @@
 - id: hero_cta
   translation: "Explore the Platform"
 
+
+- id: services_title
+  translation: "What We Deliver"
+- id: service_transport_title
+  translation: "Autonomous Aerial Transport"
+- id: service_transport_desc
+  translation: "Our drones adapt, reroute, and react in real time—no pilot required. Built for secure deliveries at scale."
+- id: service_dualuse_title
+  translation: "Dual-Use Readiness"
+- id: service_dualuse_desc
+  translation: "Designed for peace, prepared for purpose. Our modular systems support both commercial and defense operations."
+- id: service_ai_title
+  translation: "AI-Powered Insights"
+- id: service_ai_desc
+  translation: "Every flight becomes smarter. From computer vision to cloud-based telemetry, we turn missions into data."
+

@@ -49,3 +49,18 @@
 - id: hero_cta
   translation: "Poznaj platformę"
 
+- id: services_title
+  translation: "Nasze rozwiązania"
+- id: service_transport_title
+  translation: "Autonomiczny transport powietrzny"
+- id: service_transport_desc
+  translation: "Nasze drony dostosowują się, zmieniają trasę i reagują w czasie rzeczywistym—bez pilota. Zaprojektowane do bezpiecznych dostaw na dużą skalę."
+- id: service_dualuse_title
+  translation: "Gotowość do podwójnego zastosowania"
+- id: service_dualuse_desc
+  translation: "Zaprojektowane dla pokoju, gotowe do działania. Nasze modułowe systemy wspierają zarówno zastosowania cywilne, jak i obronne."
+- id: service_ai_title
+  translation: "Wgląd oparty na AI"
+- id: service_ai_desc
+  translation: "Każdy lot staje się mądrzejszy. Od komputerowego widzenia po telemetrykę w chmurze—zamieniamy misje w dane."
+

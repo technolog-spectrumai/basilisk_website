@@ -49,5 +49,20 @@
 - id: hero_cta
   translation: "Explorer la plateforme"
 
+- id: services_title
+  translation: "Ce que nous offrons"
+- id: service_transport_title
+  translation: "Transport aérien autonome"
+- id: service_transport_desc
+  translation: "Nos drones s’adaptent, changent de trajectoire et réagissent en temps réel—sans pilote. Conçus pour des livraisons sécurisées à grande échelle."
+- id: service_dualuse_title
+  translation: "Préparation à double usage"
+- id: service_dualuse_desc
+  translation: "Conçus pour la paix, prêts pour l’action. Nos systèmes modulaires prennent en charge les opérations civiles et militaires."
+- id: service_ai_title
+  translation: "Analytique alimentée par l’IA"
+- id: service_ai_desc
+  translation: "Chaque vol devient plus intelligent. De la vision par ordinateur à la télémétrie cloud, nous transformons les missions en données."
+
 
 

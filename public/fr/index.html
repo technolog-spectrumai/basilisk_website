@@ -88,6 +88,45 @@
   </div>
 </section>
 
+
+<section id="services" :class="dark ? 'py-20 bg-gray-950' : 'py-20 bg-indigo-100'" class="transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 :class="dark ? 'text-indigo-400' : 'text-indigo-800'" class="text-4xl sm:text-5xl font-bold mb-10">
+      Ce que nous offrons
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+      
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          Transport aérien autonome
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          Nos drones s’adaptent, changent de trajectoire et réagissent en temps réel—sans pilote. Conçus pour des livraisons sécurisées à grande échelle.
+        </p>
+      </div>
+      
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          Préparation à double usage
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          Conçus pour la paix, prêts pour l’action. Nos systèmes modulaires prennent en charge les opérations civiles et militaires.
+        </p>
+      </div>
+      
+      <div :class="dark ? 'bg-gray-900' : 'bg-white'" class="p-6 rounded shadow hover:shadow-xl transition-colors duration-300">
+        <h4 :class="dark ? 'text-white' : 'text-indigo-800'" class="text-xl sm:text-2xl font-semibold mb-2">
+          Analytique alimentée par l’IA
+        </h4>
+        <p class="text-base sm:text-lg" :class="dark ? 'text-gray-400' : 'text-gray-600'">
+          Chaque vol devient plus intelligent. De la vision par ordinateur à la télémétrie cloud, nous transformons les missions en données.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </main>
 
 
