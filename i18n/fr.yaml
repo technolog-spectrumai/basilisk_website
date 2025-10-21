@@ -82,6 +82,15 @@
 - id: platform_tagline
   translation: "Conscience en temps réel. Contrôle sans compromis."
 
+- id: about_title
+  translation: "Des cieux plus intelligents. Des systèmes plus sûrs."
+- id: about_intro
+  translation: "Chez Basilisk Systems, nous concevons une intelligence aérienne fondée sur la confiance. Chaque appareil est une évolution en mouvement—conçu pour voler plus intelligemment, s’adapter plus rapidement et fonctionner en toute sécurité."
+- id: about_detail
+  translation: "Notre plateforme combine des drones avancés, des capteurs multimodaux et des logiciels de vol intelligents avec des analyses cloud et une réactivité en temps réel. Qu’il s’agisse de missions autonomes ou de surveillance d’actifs critiques, chaque système est aligné pour la précision, la continuité et le contrôle."
+- id: about_tagline
+  translation: "La vision rencontre la précision. Les capteurs rencontrent la stratégie. Les données rencontrent l’espace aérien."
+
 
 
 

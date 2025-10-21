@@ -83,4 +83,13 @@
 - id: platform_tagline
   translation: "Real-time awareness. Uncompromising control."
 
+- id: about_title
+  translation: "Smarter Skies. Safer Systems."
+- id: about_intro
+  translation: "At Basilisk Systems, we engineer aerial intelligence built on trust. Each aircraft is an evolution in progress—designed to fly smarter, adapt faster, and perform securely."
+- id: about_detail
+  translation: "Our platform blends advanced drones, multimodal sensors, and intelligent flight software with cloud-based insights and real-time responsiveness. Whether navigating autonomous missions or monitoring high-priority assets, every system is aligned for accuracy, continuity, and control."
+- id: about_tagline
+  translation: "Vision meets precision. Sensors meet strategy. Data meets airspace."
+
 
