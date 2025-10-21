@@ -19,9 +19,9 @@
   class="font-sans transition-colors duration-300"
 >
 
-<!-- Header -->
+
 <header x-data="{ open: false }" class="relative px-4 py-5 flex justify-between items-center"
- :class="dark ? 'bg-gray-900 text-gray-300 shadow' : 'bg-blue-900 text-indigo-100 shadow'">
+  :class="dark ? 'bg-gray-900 text-gray-300 shadow' : 'bg-blue-900 text-indigo-100 shadow'">
   <div class="flex items-center gap-3">
     <img :src="dark ? 'https://i.ibb.co/zWD7sMw2/basilisk-light-logo3.png' : 'https://i.ibb.co/BHLy7fdG/basilisk-light-logo.png'" alt="Basilisk Logo"
          :class="dark ? 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(140,116,246,0.8)]' : 'h-8 w-8 object-contain drop-shadow-[0_0_2px_rgba(196,201,252,0.8)]'" />
@@ -30,20 +30,34 @@
     </h1>
   </div>
 
-  <!-- Mobile Toggle -->
-  <button @click="open = !open" class="md:hidden text-indigo-200 focus:outline-none">
-    <i x-show="!open" class="fas fa-bars text-2xl"></i>
-    <i x-show="open" class="fas fa-xmark text-2xl"></i>
+  <!-- Hamburger Button -->
+  <button @click="open = !open" class="sm:hidden text-white text-2xl focus:outline-none" aria-label="Toggle navigation">
+    <i :class="open ? 'fas fa-times' : 'fas fa-bars'"></i>
   </button>
 
-  <!-- Desktop Nav -->
-  <nav class="hidden md:flex space-x-6 text-sm font-medium">
-    <a href="#services" class="hover:underline">{{ i18n "nav_services" }}</a>
-    <a href="#technology" class="hover:underline">{{ i18n "nav_technology" }}</a>
-    <a href="#platform" class="hover:underline">{{ i18n "nav_platform" }}</a>
-    <a href="#about" class="hover:underline">{{ i18n "nav_about" }}</a>
+  <!-- Desktop Navigation -->
+  <nav class="hidden sm:flex sm:flex-row sm:space-x-6 sm:text-xl items-center">
+    <a href="#services" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_services" }}</a>
+    <a href="#technology" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_technology" }}</a>
+    <a href="#platform" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_platform" }}</a>
+    <a href="#about" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_about" }}</a>
+    <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition">
+      <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile Dropdown Navigation -->
+  <nav x-show="open" x-transition x-cloak class="absolute top-full left-0 w-full flex flex-col bg-inherit space-y-4 text-xl text-center mt-4 px-4 sm:hidden z-50">
+    <a href="#services" class="hover:text-indigo-400">{{ i18n "nav_services" }}</a>
+    <a href="#technology" class="hover:text-indigo-400">{{ i18n "nav_technology" }}</a>
+    <a href="#platform" class="hover:text-indigo-400">{{ i18n "nav_platform" }}</a>
+    <a href="#about" class="hover:text-indigo-400">{{ i18n "nav_about" }}</a>
+    <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition mx-auto">
+      <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+    </button>
   </nav>
 </header>
+
 
 <main>
   <!-- Sections go here -->

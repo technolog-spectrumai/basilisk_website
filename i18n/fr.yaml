@@ -1,7 +1,5 @@
 - id: site_title
   translation: "Basilisk Systems"
-- id: brand_name
-  translation: "Basilisk Systems"
 
 # Navigation
 - id: nav_services
@@ -28,4 +26,20 @@
   translation: "Explorer"
 - id: footer_contact
   translation: "Contact"
+  
+- id: brand_name
+  translation: "Basilisk Systems"
+- id: nav_services
+  translation: "Services"
+- id: nav_technology
+  translation: "Technologie"
+- id: nav_platform
+  translation: "Plateforme"
+- id: nav_about
+  translation: "À propos"
+- id: aria_light_mode
+  translation: "Passer en mode clair"
+- id: aria_dark_mode
+  translation: "Passer en mode sombre"
+
 
