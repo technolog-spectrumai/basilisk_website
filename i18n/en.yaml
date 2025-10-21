@@ -42,3 +42,10 @@
 - id: aria_dark_mode
   translation: "Switch to Dark Mode"
 
+- id: hero_title
+  translation: "Smarter Skies Begin Here"
+- id: hero_description
+  translation: "Autonomous drone transport built on vision, security, and relentless innovation."
+- id: hero_cta
+  translation: "Explore the Platform"
+

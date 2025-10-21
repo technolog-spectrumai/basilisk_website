@@ -15,7 +15,7 @@
 - id: footer_brand
   translation: "Basilisk Systems"
 - id: footer_tagline
-  translation: "Projektujemy inteligencję powietrzną dla bezpieczniejszego, szybszego i bardziej połączonego świata."
+  translation: "Projektujemy inteligentne rozwiązania latające abyśmjy żyli w bezpieczniejszym, szybsym i bardziej połączonym świecie."
 - id: footer_copyright
   translation: "© 2025 Basilisk Systems. Wszelkie prawa zastrzeżone."
 - id: footer_affiliation_prefix
@@ -42,4 +42,10 @@
 - id: aria_dark_mode
   translation: "Przełącz na tryb ciemny"
 
+- id: hero_title
+  translation: "Inteligentniejsze niebo zaczyna się tutaj"
+- id: hero_description
+  translation: "Autonomiczny transport dronami oparty na wizji, bezpieczeństwie i nieustannej innowacji."
+- id: hero_cta
+  translation: "Poznaj platformę"
 

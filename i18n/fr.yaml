@@ -41,5 +41,13 @@
   translation: "Passer en mode clair"
 - id: aria_dark_mode
   translation: "Passer en mode sombre"
+  
+- id: hero_title
+  translation: "Des cieux plus intelligents commencent ici"
+- id: hero_description
+  translation: "Transport de drones autonome fondé sur la vision, la sécurité et une innovation constante."
+- id: hero_cta
+  translation: "Explorer la plateforme"
+
 
 
