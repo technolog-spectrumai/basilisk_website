@@ -41,12 +41,14 @@
     <a href="#technology" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_technology" }}</a>
     <a href="#platform" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_platform" }}</a>
     <a href="#about" class="hover:text-indigo-400" :class="dark ? 'text-gray-300' : 'text-indigo-100'">{{ i18n "nav_about" }}</a>
-    <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition">
+    <div class="mx-4">
+        <a href="/en/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇬🇧</a>
+        <a href="/pl/"  :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇵🇱 </a>
+        <a href="/fr/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇫🇷 </a>
+    </div>
+      <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition">
       <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
     </button>
-      <a href="/en/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇬🇧</a>
-      <a href="/pl/"  :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇵🇱 </a>
-      <a href="/fr/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇫🇷 </a>
   </nav>
 
   <!-- Mobile Dropdown Navigation -->
@@ -55,14 +57,14 @@
     <a href="#technology" class="hover:text-indigo-400">{{ i18n "nav_technology" }}</a>
     <a href="#platform" class="hover:text-indigo-400">{{ i18n "nav_platform" }}</a>
     <a href="#about" class="hover:text-indigo-400">{{ i18n "nav_about" }}</a>
-    <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition mx-auto">
-      <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
-    </button>
       <div>
         <a href="/en/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇬🇧</a>
         <a href="/pl/"  :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇵🇱 </a>
         <a href="/fr/" :class="dark ? 'text-gray-300 hover:text-cyan-400' : 'text-gray-700 hover:text-indigo-600'">🇫🇷 </a>
       </div>
+      <button @click="dark = !dark" class="text-xl p-2 rounded-full text-white transition mx-auto">
+        <i :class="!dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
   </nav>
 </header>
 
