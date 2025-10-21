@@ -73,6 +73,15 @@
 - id: technology_tagline
   translation: "Conçu pour s’adapter. Conçu pour inspirer confiance."
 
+- id: platform_title
+  translation: "Notre plateforme en vol"
+- id: platform_intro
+  translation: "Chaque drone Basilisk relie l’intelligence embarquée à une visibilité mondiale."
+- id: platform_detail
+  translation: "Performance de vol, cadres de sécurité, traitement visuel et analytique cloud s’unissent pour orchestrer l’espace aérien. Derrière chaque mission se trouve une plateforme conçue pour évoluer."
+- id: platform_tagline
+  translation: "Conscience en temps réel. Contrôle sans compromis."
+
 
 
 

@@ -74,4 +74,13 @@
 - id: technology_tagline
   translation: "Engineered to adapt. Designed to trust."
 
+- id: platform_title
+  translation: "Our Platform in Flight"
+- id: platform_intro
+  translation: "Every Basilisk drone connects edge intelligence with global visibility."
+- id: platform_detail
+  translation: "Flight performance, security frameworks, vision processing, and cloud analytics come together to create seamless airspace orchestration. Behind every mission is a platform designed to evolve."
+- id: platform_tagline
+  translation: "Real-time awareness. Uncompromising control."
+
 
