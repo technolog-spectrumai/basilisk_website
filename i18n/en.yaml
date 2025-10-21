@@ -1,0 +1,31 @@
+- id: site_title
+  translation: "Basilisk Systems"
+- id: brand_name
+  translation: "Basilisk Systems"
+
+# Navigation
+- id: nav_services
+  translation: "Services"
+- id: nav_technology
+  translation: "Technology"
+- id: nav_platform
+  translation: "Platform"
+- id: nav_about
+  translation: "About"
+
+# Footer
+- id: footer_brand
+  translation: "Basilisk Systems"
+- id: footer_tagline
+  translation: "Designing aerial intelligence for a safer, faster, more connected planet."
+- id: footer_copyright
+  translation: "© 2025 Basilisk Systems. All rights reserved."
+- id: footer_affiliation_prefix
+  translation: "A proud member of the"
+- id: footer_affiliation_name
+  translation: "Spectrum Group"
+- id: footer_explore
+  translation: "Explore"
+- id: footer_contact
+  translation: "Contact"
+
