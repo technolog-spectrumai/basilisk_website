@@ -63,6 +63,16 @@
   translation: "Analytique alimentée par l’IA"
 - id: service_ai_desc
   translation: "Chaque vol devient plus intelligent. De la vision par ordinateur à la télémétrie cloud, nous transformons les missions en données."
+  
+- id: technology_title
+  translation: "Propulsé par l’intelligence"
+- id: technology_intro
+  translation: "Les drones Basilisk sont plus que des machines volantes—ce sont des agents autonomes. Conçus pour percevoir, décider et agir."
+- id: technology_detail
+  translation: "De la fusion des capteurs au changement de trajectoire stratégique, nos systèmes fonctionnent avec une conscience intégrée. Chaque appareil traite le terrain, les couloirs de vol et les signaux environnementaux grâce à une IA embarquée optimisée pour la réussite des missions."
+- id: technology_tagline
+  translation: "Conçu pour s’adapter. Conçu pour inspirer confiance."
+
 
 
 

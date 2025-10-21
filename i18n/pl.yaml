@@ -63,4 +63,14 @@
   translation: "Wgląd oparty na AI"
 - id: service_ai_desc
   translation: "Każdy lot staje się mądrzejszy. Od komputerowego widzenia po telemetrykę w chmurze—zamieniamy misje w dane."
+  
+- id: technology_title
+  translation: "Napędzane inteligencją"
+- id: technology_intro
+  translation: "Drony Basilisk to coś więcej niż maszyny latające—są autonomicznymi agentami. Zaprojektowane do wykrywania, decydowania i działania."
+- id: technology_detail
+  translation: "Od fuzji sensorów po strategiczne zmiany trasy, nasze systemy działają z pełną świadomością. Każdy statek przetwarza teren, korytarze lotu i sygnały środowiskowe dzięki wbudowanej AI dostrojonej do zapewnienia misji."
+- id: technology_tagline
+  translation: "Zaprojektowane do adaptacji. Stworzone do zaufania."
+
 

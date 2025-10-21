@@ -64,4 +64,14 @@
   translation: "AI-Powered Insights"
 - id: service_ai_desc
   translation: "Every flight becomes smarter. From computer vision to cloud-based telemetry, we turn missions into data."
+  
+- id: technology_title
+  translation: "Driven by Intelligence"
+- id: technology_intro
+  translation: "Basilisk drones are more than flying machines—they're autonomous agents. Built to sense, decide, and act."
+- id: technology_detail
+  translation: "From sensor fusion to strategic rerouting, our systems operate with awareness at their core. Each aircraft processes terrain, flight corridors, and environmental signals with embedded AI tuned for mission assurance."
+- id: technology_tagline
+  translation: "Engineered to adapt. Designed to trust."
+
 
