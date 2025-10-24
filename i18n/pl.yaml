@@ -15,7 +15,7 @@
 - id: footer_brand
   translation: "Basilisk Systems"
 - id: footer_tagline
-  translation: "Projektujemy inteligentne rozwiązania latające abyśmjy żyli w bezpieczniejszym, szybsym i bardziej połączonym świecie."
+  translation: "Projektujemy inteligentne rozwiązania abyśmy żyli w bezpieczniejszym, szybszym i bardziej połączonym świecie."
 - id: footer_copyright
   translation: "© 2025 Basilisk Systems. Wszelkie prawa zastrzeżone."
 - id: footer_affiliation_prefix
@@ -45,7 +45,7 @@
 - id: hero_title
   translation: "Inteligentniejsze niebo zaczyna się tutaj"
 - id: hero_description
-  translation: "Autonomiczny transport dronami oparty na wizji, bezpieczeństwie i nieustannej innowacji."
+  translation: "Autonomiczny transport dronami oparty na wizji komputerowej, bezpieczeństwie i nieustannej innowacji."
 - id: hero_cta
   translation: "Poznaj platformę"
 
@@ -87,8 +87,8 @@
 - id: about_intro
   translation: "W Basilisk Systems tworzymy inteligencję powietrzną opartą na zaufaniu. Każdy statek powietrzny to ewolucja w ruchu—zaprojektowany, by latać mądrzej, adaptować się szybciej i działać bezpiecznie."
 - id: about_detail
-  translation: "Nasza platforma łączy zaawansowane drony, czujniki multimodalne i inteligentne oprogramowanie lotnicze z analizą w chmurze i reakcją w czasie rzeczywistym. Niezależnie od tego, czy realizuje autonomiczne misje, czy monitoruje kluczowe zasoby, każdy system działa z precyzją, ciągłością i kontrolą."
+  translation: "Nasza platforma łączy zaawansowane drony, czujniki i inteligentne oprogramowaniez analizą w chmurze i reakcją w czasie rzeczywistym. Niezależnie od tego, czy realizuje autonomiczne misje, czy monitoruje kluczowe zasoby, każdy system działa z precyzją, ciągłością i kontrolą."
 - id: about_tagline
-  translation: "Wizja spotyka precyzję. Czujniki spotykają strategię. Dane spotykają przestrzeń powietrzną."
+  translation: "Wizja spotyka precyzję. Czujniki spotykają strategię. Dane spotykają przestrzeń."
 
 
