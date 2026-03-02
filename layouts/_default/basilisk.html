@@ -1,5 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" x-data="{ dark: true }" :class="dark ? 'dark' : ''">
+<html lang="{{ .Lang }}"
+      x-data="{
+          dark: (() => {
+              const saved = localStorage.getItem('darkMode');
+              if (saved !== null) {
+                  return JSON.parse(saved);
+              }
+              const hour = new Date().getHours();
+              return hour >= 19 || hour < 7; // dark at night
+          })(),
+          open: false
+      }"
+      :class="dark ? 'dark' : 'light'"
+      x-init="
+          document.documentElement.classList.toggle('dark', dark);
+      "
+      x-effect="
+          localStorage.setItem('darkMode', JSON.stringify(dark));
+          document.documentElement.classList.toggle('dark', dark);
+      "
+>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -271,7 +291,7 @@
       <h4 :class="dark ? 'text-indigo-400' : 'text-indigo-200'" class="text-base sm:text-lg font-semibold mb-4">
         {{ i18n "footer_contact" }}
       </h4>
-      <p class="text-sm sm:text-base mb-1">technolog@spectrumai.pl</p>
+      <p class="text-sm sm:text-base mb-1">technology@spectrumai.pl</p>
       <div class="flex space-x-4 mt-4">
         <!-- Social icons -->
         <a href="#" aria-label="LinkedIn" :class="dark ? 'text-indigo-400 hover:text-white' : 'text-indigo-400 hover:text-white'">
