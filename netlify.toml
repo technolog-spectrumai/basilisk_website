@@ -1,18 +1,13 @@
 [build]
-  command = "hugo --minify"
+  command = "echo \"Publishing prebuilt Hugo output from public/\""
   publish = "public"
 
-[build.environment]
-  HUGO_VERSION = "0.148.2"
-
-# Keep clean URLs and make the root URL land on the English homepage.
 [[redirects]]
   from = "/"
   to = "/en/"
   status = 302
   force = false
 
-# Old path from the previous front matter. Prevents /basilisk/ from becoming a 404.
 [[redirects]]
   from = "/basilisk/"
   to = "/en/"

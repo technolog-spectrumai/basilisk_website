@@ -1,65 +1,28 @@
-# Basilisk Systems — Netlify-ready Hugo update
+# Basilisk Netlify prebuilt fallback
 
-This update contains the modern custom CSS Basilisk design plus Netlify deployment fixes.
+This package avoids the Netlify Hugo installer/GitHub rate-limit issue by publishing the already generated `public/` directory.
 
-## What is included
+## Apply
 
-```text
-layouts/_default/basilisk.html
-content/en/index.md
-content/pl/index.md
-content/fr/index.md
-static/img/baz.jpg
-static/img/baz_li.png
-static/img/logo_b.png
-static/img/logo_w.png
-static/_redirects
-hugo.toml
-netlify.toml
+```bash
+unzip basilisk_netlify_prebuilt.zip
+cp -r basilisk_netlify_prebuilt/* .
+git add .
+git commit -m "Use prebuilt Netlify deploy output"
+git push
 ```
 
-## Why this fixes Netlify 404
+## Important
 
-Netlify must publish Hugo's generated `public/` folder, not the repository root. The included `netlify.toml` sets:
+In Netlify UI, remove any `HUGO_VERSION` environment variable if you are using this prebuilt mode. The build command does not run Hugo; it only publishes `public/`.
+
+Later, when GitHub rate limits are gone, you can switch back to:
 
 ```toml
 [build]
   command = "hugo --minify"
   publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.148.2"
 ```
-
-The multilingual homepage lives at `/en/`, `/pl/`, and `/fr/`. The root URL `/` redirects to `/en/`.
-
-## Apply from the project root
-
-```bash
-unzip basilisk_netlify_update.zip
-cp -r basilisk_netlify_update/* .
-rm -rf public resources
-hugo server -D --disableFastRender
-```
-
-Open locally:
-
-```text
-http://localhost:1313/en/
-http://localhost:1313/pl/
-http://localhost:1313/fr/
-http://localhost:1313/img/baz.jpg
-```
-
-## Deploy to Netlify
-
-```bash
-git add .
-git commit -m "Add Netlify-ready Basilisk Hugo site"
-git push
-```
-
-Then in Netlify:
-
-```text
-Deploys → Trigger deploy → Clear cache and deploy site
-```
-
-If your Netlify site name is different, edit `baseURL` in `hugo.toml`.
