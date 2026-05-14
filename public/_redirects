@@ -1,0 +1,6 @@
+# Fallback redirects for Netlify. netlify.toml is the primary config.
+/              /en/  302
+/basilisk/     /en/  301!
+/en/basilisk/  /en/  301!
+/pl/basilisk/  /pl/  301!
+/fr/basilisk/  /fr/  301!

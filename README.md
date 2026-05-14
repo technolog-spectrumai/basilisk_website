@@ -1,43 +1,65 @@
-# Basilisk Systems next-level Hugo design
+# Basilisk Systems — Netlify-ready Hugo update
 
-This patch replaces the old Tailwind/Alpine layout with a fully custom CSS Hugo layout inspired by the premium single-page structure of `Cool_website.html`, but redesigned for Basilisk Systems: autonomous drones, AI perception, secure telemetry, and mission software.
+This update contains the modern custom CSS Basilisk design plus Netlify deployment fixes.
 
-## What changed
+## What is included
 
-- No Tailwind.
-- No Alpine.
-- No Font Awesome.
-- Local static images are served by Hugo from `static/img/`.
-- `content/*/index.md` uses `url: "/"`, so pages resolve at `/en/`, `/pl/`, and `/fr/` when `defaultContentLanguageInSubdir = true`.
-- The layout has built-in multilingual copy for EN/PL/FR using `.Lang`.
+```text
+layouts/_default/basilisk.html
+content/en/index.md
+content/pl/index.md
+content/fr/index.md
+static/img/baz.jpg
+static/img/baz_li.png
+static/img/logo_b.png
+static/img/logo_w.png
+static/_redirects
+hugo.toml
+netlify.toml
+```
 
-## Apply
+## Why this fixes Netlify 404
 
-From your project root:
+Netlify must publish Hugo's generated `public/` folder, not the repository root. The included `netlify.toml` sets:
+
+```toml
+[build]
+  command = "hugo --minify"
+  publish = "public"
+```
+
+The multilingual homepage lives at `/en/`, `/pl/`, and `/fr/`. The root URL `/` redirects to `/en/`.
+
+## Apply from the project root
 
 ```bash
-cp -r basilisk_nextlevel_patch/* .
+unzip basilisk_netlify_update.zip
+cp -r basilisk_netlify_update/* .
 rm -rf public resources
 hugo server -D --disableFastRender
 ```
 
-Open:
+Open locally:
 
 ```text
 http://localhost:1313/en/
 http://localhost:1313/pl/
 http://localhost:1313/fr/
+http://localhost:1313/img/baz.jpg
 ```
 
-## Important
+## Deploy to Netlify
 
-Your original images were in a root-level `img/` folder. Hugo serves static files from `static/`, so this patch moves them to:
+```bash
+git add .
+git commit -m "Add Netlify-ready Basilisk Hugo site"
+git push
+```
+
+Then in Netlify:
 
 ```text
-static/img/baz.jpg
-static/img/baz_li.png
-static/img/logo_b.png
-static/img/logo_w.png
+Deploys → Trigger deploy → Clear cache and deploy site
 ```
 
-The template references them as `/img/...` using Hugo `relURL`.
+If your Netlify site name is different, edit `baseURL` in `hugo.toml`.

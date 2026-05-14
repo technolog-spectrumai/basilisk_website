@@ -1,0 +1,38 @@
+[build]
+  command = "hugo --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.148.2"
+
+# Keep clean URLs and make the root URL land on the English homepage.
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = false
+
+# Old path from the previous front matter. Prevents /basilisk/ from becoming a 404.
+[[redirects]]
+  from = "/basilisk/"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/basilisk/"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pl/basilisk/"
+  to = "/pl/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fr/basilisk/"
+  to = "/fr/"
+  status = 301
+  force = true

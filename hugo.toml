@@ -1,4 +1,4 @@
-baseURL = "https://basilisk-website.pages.dev/"
+baseURL = "https://basilisk-systems.netlify.app/"
 title = "Basilisk Systems"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
