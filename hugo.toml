@@ -4,7 +4,6 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 [languages]
-
   [languages.en]
     languageName = "English"
     weight = 1
@@ -19,4 +18,3 @@ defaultContentLanguageInSubdir = true
     languageName = "Français"
     weight = 3
     contentDir = "content/fr"
-
