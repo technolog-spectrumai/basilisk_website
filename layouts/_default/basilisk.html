@@ -264,11 +264,11 @@
       --header: rgba(246, 251, 255, .74);
       --hero-img: url('/img/drone_day.jpg');
       --boat-img: url('/img/boat_day.jpg');
-      --rover-img: url('/img/rover_night.jpg');
+      --rover-img: url('/img/rover_day.jpg');
       --logo-img: url('/img/logo_b.png');
       --drone-shade: rgba(58,128,190,.26); --drone-glow: rgba(255,255,255,.18); --drone-glass: rgba(236,246,255,.72); --drone-ink: #06111f; --drone-sub: #20324a; --drone-edge: rgba(255,255,255,.72);
       --boat-shade: rgba(28,44,66,.50); --boat-glass: rgba(26,40,58,.74); --boat-edge: rgba(190,210,235,.20);
-      --rover-shade: rgba(28,23,18,.52); --rover-glass: rgba(26,22,18,.64); --rover-edge: rgba(255,222,186,.18);
+      --rover-shade: rgba(46,54,38,.46); --rover-glass: rgba(40,47,33,.70); --rover-edge: rgba(222,236,200,.22); --rover-sub: rgba(226,238,208,.78);
       --gradient: radial-gradient(circle at 18% 10%, rgba(11,183,255,.18), transparent 28rem), radial-gradient(circle at 82% 16%, rgba(127,134,255,.16), transparent 32rem), linear-gradient(180deg, #f8fdff 0%, #eaf8ff 52%, #ffffff 100%);
     }
     :root[data-theme="dark"] {
@@ -296,7 +296,7 @@
       --logo-img: url('/img/logo_w.png');
       --drone-shade: rgba(10,20,30,.58); --drone-glow: rgba(53,217,255,.12); --drone-glass: rgba(8,17,26,.68); --drone-ink: #ffffff; --drone-sub: rgba(255,255,255,.72); --drone-edge: rgba(160,200,230,.16);
       --boat-shade: rgba(8,16,29,.58); --boat-glass: rgba(8,16,28,.80); --boat-edge: rgba(150,180,230,.16);
-      --rover-shade: rgba(24,20,16,.56); --rover-glass: rgba(22,19,15,.68); --rover-edge: rgba(255,222,186,.16);
+      --rover-shade: rgba(24,20,16,.56); --rover-glass: rgba(22,19,15,.68); --rover-edge: rgba(255,222,186,.16); --rover-sub: rgba(255,236,214,.72);
       --gradient: radial-gradient(circle at 16% 8%, rgba(53,217,255,.13), transparent 28rem), radial-gradient(circle at 88% 12%, rgba(126,136,255,.13), transparent 32rem), linear-gradient(180deg, #050b13 0%, #071421 58%, #050b13 100%);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -438,7 +438,7 @@
     .team-copy p { color:rgba(255,255,255,.78); font-size:1.08rem; }
     .team-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
     .team-stat { padding:18px 20px; border-radius:22px; background:var(--rover-glass); border:1px solid var(--rover-edge); backdrop-filter:blur(12px); }
-    .team-stat small { display:flex; align-items:center; gap:8px; color:rgba(255,236,214,.72); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .team-stat small { display:flex; align-items:center; gap:8px; color:var(--rover-sub); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
     .team-stat small::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 14px var(--success); }
     .team-stat strong { display:block; font-size:1.08rem; margin-bottom:4px; }
     .team-stat span { color:rgba(255,255,255,.70); font-size:.9rem; }
