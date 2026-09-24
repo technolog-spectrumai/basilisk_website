@@ -448,6 +448,10 @@
     .app-card h3 { margin-bottom:10px; font-size:1.12rem; }
     .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--boat-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
     .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 55%, transparent); }
+    .mission-wide { border-radius:0; border-inline:0; min-height:clamp(460px, 72vh, 760px); display:flex; align-items:center; padding:clamp(56px, 8vw, 110px) 0; background-position:72% center; background-attachment:fixed; }
+    .mission-wide::before { background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 50%, transparent 85%), linear-gradient(0deg, var(--boat-shade), transparent 40%); }
+    .mission-wide .mission-copy h2 { font-size:clamp(2.8rem, 7vw, 7rem); line-height:.9; }
+    #mission { padding-inline:0; }
     .mission-copy { position:relative; max-width:720px; }
     .mission-copy h2 { font-size:clamp(2.3rem, 5vw, 5rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
     .mission-copy p { color:rgba(255,255,255,.76); font-size:1.08rem; }
@@ -485,6 +489,7 @@
       .target { width:190px; height:190px; right:6%; }
       section { padding:64px 0; }
       .panel { padding:30px; border-radius:32px; }
+      .mission-wide { background-attachment:scroll; }
     }
   </style>
 </head>
@@ -614,7 +619,7 @@
         </div>
       </section>
       <section id="mission">
-        <div class="container"><div class="mission-box"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>{{ index $copy "missionTitle" }}</h2><p>{{ index $copy "missionLead" }}</p></div></div></div>
+        <div class="mission-box mission-wide"><div class="container"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>{{ index $copy "missionTitle" }}</h2><p>{{ index $copy "missionLead" }}</p></div></div></div>
       </section>
       <section id="contact" class="cta">
         <div class="container"><div class="cta-box"><h2>{{ index $copy "ctaTitle" }}</h2><p>{{ index $copy "ctaLead" }}</p><a class="btn btn-primary" href="mailto:{{ index $copy "email" }}">{{ index $copy "email" }}</a></div></div>
