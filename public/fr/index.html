@@ -26,8 +26,13 @@
       --shadow: 0 28px 90px rgba(19, 59, 111, .16);
       --shadow-soft: 0 18px 50px rgba(19, 59, 111, .10);
       --header: rgba(246, 251, 255, .74);
-      --hero-img: url('/img/baz_li.png');
+      --hero-img: url('/img/drone_day.jpg');
+      --boat-img: url('/img/boat_day.jpg');
+      --rover-img: url('/img/rover_night.jpg');
       --logo-img: url('/img/logo_b.png');
+      --drone-shade: rgba(58,128,190,.26); --drone-glow: rgba(255,255,255,.18); --drone-glass: rgba(236,246,255,.72); --drone-ink: #06111f; --drone-sub: #20324a; --drone-edge: rgba(255,255,255,.72);
+      --boat-shade: rgba(28,44,66,.50); --boat-glass: rgba(26,40,58,.74); --boat-edge: rgba(190,210,235,.20);
+      --rover-shade: rgba(28,23,18,.52); --rover-glass: rgba(26,22,18,.64); --rover-edge: rgba(255,222,186,.18);
       --gradient: radial-gradient(circle at 18% 10%, rgba(11,183,255,.18), transparent 28rem), radial-gradient(circle at 82% 16%, rgba(127,134,255,.16), transparent 32rem), linear-gradient(180deg, #f8fdff 0%, #eaf8ff 52%, #ffffff 100%);
     }
     :root[data-theme="dark"] {
@@ -49,8 +54,13 @@
       --shadow: 0 32px 110px rgba(0,0,0,.45);
       --shadow-soft: 0 18px 60px rgba(0,0,0,.30);
       --header: rgba(5, 11, 19, .78);
-      --hero-img: url('/img/baz.jpg');
+      --hero-img: url('/img/drone_night.jpg');
+      --boat-img: url('/img/boat_night.jpg');
+      --rover-img: url('/img/rover_night.jpg');
       --logo-img: url('/img/logo_w.png');
+      --drone-shade: rgba(10,20,30,.58); --drone-glow: rgba(53,217,255,.12); --drone-glass: rgba(8,17,26,.68); --drone-ink: #ffffff; --drone-sub: rgba(255,255,255,.72); --drone-edge: rgba(160,200,230,.16);
+      --boat-shade: rgba(8,16,29,.58); --boat-glass: rgba(8,16,28,.80); --boat-edge: rgba(150,180,230,.16);
+      --rover-shade: rgba(24,20,16,.56); --rover-glass: rgba(22,19,15,.68); --rover-edge: rgba(255,222,186,.16);
       --gradient: radial-gradient(circle at 16% 8%, rgba(53,217,255,.13), transparent 28rem), radial-gradient(circle at 88% 12%, rgba(126,136,255,.13), transparent 32rem), linear-gradient(180deg, #050b13 0%, #071421 58%, #050b13 100%);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,16 +114,15 @@
     .metric strong { display:block; margin-bottom:5px; font-size:1.1rem; }
     .metric span { display:block; color:var(--muted); font-size:.88rem; line-height:1.45; }
     .drone-stage { min-height: 570px; border-radius: 46px; position:relative; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line-strong); background: #071421 var(--hero-img) center/cover no-repeat; isolation:isolate; }
-    .drone-stage::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 72% 26%, rgba(53,217,255,.12), transparent 20rem), linear-gradient(180deg, rgba(2,8,16,.08), rgba(2,8,16,.54)); z-index:1; }
-    :root:not([data-theme="dark"]) .drone-stage::before { background: radial-gradient(circle at 74% 22%, rgba(255,255,255,.14), transparent 22rem), linear-gradient(180deg, rgba(255,255,255,.03), rgba(8,42,78,.20)); }
+    .drone-stage::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 72% 26%, var(--drone-glow), transparent 20rem), linear-gradient(180deg, transparent 20%, var(--drone-shade)); z-index:1; }
     .hud-grid { position:absolute; inset:0; z-index:2; opacity:.45; background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(circle at 70% 34%, black, transparent 65%); }
     .target { position:absolute; width:260px; height:260px; right:12%; top:12%; border:1px solid rgba(255,255,255,.38); border-radius:50%; z-index:3; animation: spin 18s linear infinite; }
     .target::before, .target::after { content:""; position:absolute; inset:34px; border:1px solid rgba(53,217,255,.34); border-radius:50%; }
     .target::after { inset:72px; border-color:rgba(255,255,255,.22); }
-    .scan-card { position:absolute; left:24px; right:24px; bottom:24px; z-index:4; border-radius:26px; padding:22px; background:rgba(3,10,18,.66); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(14px); color:white; display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; }
-    .scan-logo { width:66px; height:66px; border-radius:22px; background: rgba(255,255,255,.10) var(--logo-img) center/78% auto no-repeat; border:1px solid rgba(255,255,255,.18); }
+    .scan-card { position:absolute; left:24px; right:24px; bottom:24px; z-index:4; border-radius:26px; padding:22px; background:var(--drone-glass); border:1px solid var(--drone-edge); backdrop-filter:blur(14px); color:var(--drone-ink); display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; }
+    .scan-logo { width:66px; height:66px; border-radius:22px; background: color-mix(in srgb, var(--drone-ink) 8%, transparent) var(--logo-img) center/78% auto no-repeat; border:1px solid var(--drone-edge); }
     .scan-card strong { display:block; font-size:1.05rem; margin-bottom:6px; }
-    .scan-card span { color:rgba(255,255,255,.72); line-height:1.45; font-size:.94rem; }
+    .scan-card span { color:var(--drone-sub); line-height:1.45; font-size:.94rem; }
     @keyframes spin { to { transform: rotate(360deg); } }
     section { padding: 88px 0; position:relative; z-index:1; }
     .section-head { max-width:820px; margin-bottom:42px; }
@@ -137,14 +146,37 @@
     .feature { display:grid; grid-template-columns:50px 1fr; gap:16px; padding:20px; border-radius:24px; background:var(--surface); border:1px solid var(--line); }
     .feature-number { width:50px; height:50px; border-radius:17px; display:grid; place-items:center; background:linear-gradient(135deg,var(--cyan),var(--blue)); color:white; font-weight:950; }
     .feature h3 { margin-bottom:6px; }
+    .showcase { display:grid; gap:28px; }
+    .show-row { display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
+    .show-row.reverse .show-media { order:2; }
+    .show-media { min-height:380px; border-radius:36px; position:relative; overflow:hidden; background:#071421 center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); isolation:isolate; }
+    .show-media::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, transparent 30%, var(--shade)); }
+    .media-air { background-image:var(--hero-img); --shade:var(--drone-shade); --glass:var(--drone-glass); --edge:var(--drone-edge); --tag-ink:var(--drone-ink); }
+    .media-sea { background-image:var(--boat-img); background-position:72% center; --shade:var(--boat-shade); --glass:var(--boat-glass); --edge:var(--boat-edge); --tag-ink:#fff; }
+    .media-land { background-image:var(--rover-img); background-position:70% center; --shade:var(--rover-shade); --glass:var(--rover-glass); --edge:var(--rover-edge); --tag-ink:#fff; }
+    .show-tag { position:absolute; left:20px; bottom:20px; z-index:4; padding:9px 14px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); backdrop-filter:blur(12px); color:var(--tag-ink); font-weight:950; font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
+    .show-copy h3 { font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.02; letter-spacing:-.05em; margin-bottom:14px; }
+    .show-copy .panel-list { margin-top:20px; }
+    .team-band { border-radius:44px; padding:clamp(34px, 5vw, 64px); min-height:520px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; background:#14110e var(--rover-img) 70% center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); overflow:hidden; position:relative; color:white; isolation:isolate; }
+    .team-band::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, var(--rover-glass), var(--rover-shade) 50%, transparent), linear-gradient(0deg, var(--rover-shade), transparent 55%); }
+    .team-band .hud-grid { z-index:-1; }
+    .team-copy { max-width:640px; }
+    .team-copy h2 { font-size:clamp(2.2rem, 4.8vw, 4.4rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
+    .team-copy p { color:rgba(255,255,255,.78); font-size:1.08rem; }
+    .team-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .team-stat { padding:18px 20px; border-radius:22px; background:var(--rover-glass); border:1px solid var(--rover-edge); backdrop-filter:blur(12px); }
+    .team-stat small { display:flex; align-items:center; gap:8px; color:rgba(255,236,214,.72); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .team-stat small::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 14px var(--success); }
+    .team-stat strong { display:block; font-size:1.08rem; margin-bottom:4px; }
+    .team-stat span { color:rgba(255,255,255,.70); font-size:.9rem; }
     .ops-band { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--cyan) 7%, transparent), transparent); }
     .app-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
     .app-card { min-height:245px; padding:24px; border-radius:28px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
     .kicker { display:inline-flex; padding:7px 11px; border-radius:999px; background:color-mix(in srgb, var(--dragon) 12%, transparent); color:var(--blue); font-size:.72rem; letter-spacing:.09em; font-weight:950; text-transform:uppercase; margin-bottom:18px; }
     :root[data-theme="dark"] .kicker { color:var(--cyan); }
     .app-card h3 { margin-bottom:10px; font-size:1.12rem; }
-    .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--hero-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
-    .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(3,9,16,.88), rgba(3,9,16,.66), rgba(3,9,16,.12)); }
+    .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--boat-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
+    .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 55%, transparent); }
     .mission-copy { position:relative; max-width:720px; }
     .mission-copy h2 { font-size:clamp(2.3rem, 5vw, 5rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
     .mission-copy p { color:rgba(255,255,255,.76); font-size:1.08rem; }
@@ -157,7 +189,8 @@
     .mobile-panel { display:none; }
     @media (max-width: 1040px) { .app-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width: 920px) {
-      .hero-grid, .split, .cards { grid-template-columns:1fr; }
+      .hero-grid, .split, .cards, .show-row { grid-template-columns:1fr; gap:22px; }
+      .show-row.reverse .show-media { order:0; }
       .drone-stage { min-height:500px; }
       .nav-links, .actions .btn { display:none; }
       .menu-button { display:grid; }
@@ -167,8 +200,10 @@
     @media (max-width: 640px) {
       .container { width:min(100% - 26px, 1180px); }
       .hero { padding-top:50px; }
-      .metrics, .app-grid { grid-template-columns:1fr; }
+      .metrics, .app-grid, .team-stats { grid-template-columns:1fr; }
+      .team-band { border-radius:32px; min-height:0; }
       .drone-stage { min-height:430px; border-radius:32px; }
+      .show-media { min-height:260px; border-radius:28px; }
       .scan-card { grid-template-columns:1fr; }
       .target { width:190px; height:190px; right:6%; }
       section { padding:64px 0; }
@@ -237,6 +272,25 @@
           </div>
         </div>
       </section>
+      <section id="fleet">
+        <div class="container">
+          <div class="section-head"><h2>Conçu pour l’air, la mer et la terre.</h2><p>Le même cœur d’autonomie Basilisk équipe chaque plateforme — adapté à la physique, aux capteurs et aux risques de chaque environnement.</p></div>
+          <div class="showcase">
+            <article class="show-row">
+              <div class="show-media media-air" role="img" aria-label="Air"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Air · UAS</span></div>
+              <div class="show-copy"><span class="kicker">UAS · autonomie aérienne</span><h3>Des yeux au-dessus de la mission.</h3><p>Des drones autonomes qui surveillent, inspectent et suivent depuis le ciel — et partagent ce qu’ils voient avec toute la flotte.</p><ul class="panel-list"><li>Missions hors vue avec perception embarquée</li><li>Navigation sans GNSS et évitement d’obstacles</li><li>Vidéo en direct, cartographie et suivi d’objets</li></ul></div>
+            </article>
+            <article class="show-row reverse">
+              <div class="show-media media-sea" role="img" aria-label="Mer"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Mer · USV</span></div>
+              <div class="show-copy"><span class="kicker">USV · UUV · maritime</span><h3>Une présence permanente en mer.</h3><p>Des navires de surface sans équipage qui patrouillent, relèvent et escortent en haute mer — de jour comme de nuit, par mer formée.</p><ul class="panel-list"><li>Patrouille longue endurance et connaissance du domaine maritime</li><li>Fusion radar, AIS et capteurs électro-optiques</li><li>Navigation conforme au COLREG et anticollision</li></ul></div>
+            </article>
+            <article class="show-row">
+              <div class="show-media media-land" role="img" aria-label="Terre"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Terre · UGV</span></div>
+              <div class="show-copy"><span class="kicker">UGV · robotique terrestre</span><h3>Aller là où la route s’arrête.</h3><p>Des véhicules terrestres autonomes qui transportent, éclairent et sécurisent — dans la boue, la forêt et le terrain accidenté.</p><ul class="panel-list"><li>Navigation tout-terrain en milieu non structuré</li><li>Ravitaillement et transport de charges autonomes</li><li>Patrouille périmétrique et opérations en zones dangereuses</li></ul></div>
+            </article>
+          </div>
+        </div>
+      </section>
       <section id="capabilities">
         <div class="container">
           <div class="section-head"><h2>La couche d’intelligence des machines dans le monde physique.</h2><p>Basilisk Systems est une entreprise d’IA physique. Nous donnons aux véhicules et aux robots la capacité de percevoir leur environnement, de raisonner et d’agir en sécurité — sous le contrôle permanent de l’humain.</p></div>
@@ -257,6 +311,9 @@
             <div class="feature"><div class="feature-number">04</div><div><h3>Intégration système</h3><p>Intégration avec véhicules, capteurs, systèmes C2, API et clouds privés existants.</p></div></div>
           </div>
         </div>
+      </section>
+      <section id="teaming">
+        <div class="container"><div class="team-band" role="img" aria-label="Coopération multi-domaine"><div class="hud-grid" aria-hidden="true"></div><div class="team-copy"><div class="eyebrow">Coopération multi-domaine</div><h2>Une seule situation opérationnelle, tous domaines confondus.</h2><p>Véhicules aériens, maritimes et terrestres partagent perception et intention en temps réel — l’opérateur commande une équipe coordonnée, et non des machines isolées.</p></div><div class="team-stats"><div class="team-stat"><small>Air</small><strong>Surveillance</strong><span>Suivi de la zone d’intérêt</span></div><div class="team-stat"><small>Mer</small><strong>Patrouille</strong><span>Maintien du secteur</span></div><div class="team-stat"><small>Terre</small><strong>Ravitaillement</strong><span>En route vers le point</span></div></div></div></div>
       </section>
       <section id="operations" class="ops-band">
         <div class="container">
