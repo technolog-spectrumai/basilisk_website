@@ -1,66 +1,81 @@
 {{- $isPL := eq .Lang "pl" -}}
 {{- $isFR := eq .Lang "fr" -}}
 {{- $copy := dict
-  "eyebrow" "Autonomous systems · AI vision · secure field operations"
-  "nav1" "Capabilities" "nav2" "Platform" "nav3" "Operations" "nav4" "Mission" "nav5" "Contact"
-  "heroTitle" "Basilisk builds intelligent aerial systems for the hard edge of autonomy."
-  "heroLead" "We design drone intelligence, resilient perception stacks, and mission software for teams that need machines to see, decide, and coordinate in complex environments."
-  "primary" "Explore the platform" "secondary" "See capabilities"
-  "stat1" "AI Perception" "stat1d" "Multi-sensor awareness, target recognition, and operator-grade situational context."
-  "stat2" "Field Ready" "stat2d" "Built for real deployments: resilient interfaces, secure telemetry, and fast mission iteration."
-  "stat3" "Modular Stack" "stat3d" "Autonomy, mapping, edge inference, and command layers that can evolve independently."
-  "capTitle" "A sharper operating system for autonomous flight."
-  "capLead" "Basilisk Systems is not just a drone website. The brand is a guardian: a watchful aerial intelligence layer for infrastructure, security, research, and next-generation robotic operations."
-  "card1" "Vision Intelligence" "card1d" "Computer vision pipelines for detection, classification, tracking, inspection, and anomaly discovery from aerial data."
-  "card2" "Mission Control" "card2d" "A command interface for planning, monitoring, replaying, and improving autonomous missions."
-  "card3" "Secure Telemetry" "card3d" "Encrypted data flow, fleet status, logs, alerts, and traceable events for accountable field operations."
-  "platformTitle" "From drone signal to operational decision."
-  "platformLead" "The Basilisk platform connects the entire mission chain: sensors, edge models, flight events, human review, and post-mission intelligence."
-  "feature1" "Edge autonomy" "feature1d" "Run mission logic close to the aircraft, even when connectivity is imperfect."
-  "feature2" "Aerial intelligence" "feature2d" "Transform raw drone feeds into maps, alerts, object trails, and decision-ready summaries."
+  "eyebrow" "Physical AI · autonomy · air · sea · land"
+  "nav1" "Domains" "nav2" "Capabilities" "nav3" "Platform" "nav4" "Operations" "nav5" "Mission" "nav6" "Contact"
+  "heroTitle" "Basilisk builds physical AI for autonomy across air, sea, and land."
+  "heroPre" "Physical AI for autonomy across " "heroAccent" "air, sea & land."
+  "heroLead" "We build the intelligence that lets machines perceive, decide, and act in the real world — autonomy software, resilient perception, and mission systems for aerial, maritime, and ground platforms."
+  "primary" "Explore the platform" "secondary" "See our domains"
+  "stat1" "Physical AI" "stat1d" "Models that understand the physical world: perception, world models, and real-time control."
+  "stat2" "Multi-Domain" "stat2d" "One autonomy core for aerial, maritime, and ground vehicles — operating alone or as a team."
+  "stat3" "Field Ready" "stat3d" "Built for real deployments: degraded comms, harsh environments, and secure operations."
+  "scanTitle" "BASILISK AUTONOMY CORE" "scanText" "Physical AI · air · sea · land · operator command layer"
+  "domTitle" "One autonomy core. Every domain."
+  "domLead" "Basilisk brings physical AI to any platform that moves. The same perception, decision, and command stack adapts to the physics, sensors, and missions of each environment."
+  "air" "Air" "airk" "UAS · aerial autonomy" "aird" "Autonomous drones and aerial systems for inspection, surveillance, mapping, and logistics — flying beyond visual line of sight with onboard intelligence."
+  "sea" "Sea" "seak" "USV · UUV · maritime" "sead" "Uncrewed surface and underwater vessels for maritime awareness, port and offshore security, hydrographic survey, and long-endurance patrol."
+  "land" "Land" "landk" "UGV · ground robotics" "landd" "Autonomous ground vehicles and robots that navigate off-road and complex terrain for logistics, perimeter security, and hazardous-area operations."
+  "capTitle" "The intelligence layer for machines in the physical world."
+  "capLead" "Basilisk Systems is a physical AI company. We give vehicles and robots the ability to sense their surroundings, reason about them, and act safely — with humans always in command."
+  "card1" "Perception & World Models" "card1d" "Multi-sensor fusion across cameras, radar, lidar, sonar, and thermal — turning raw signals into a live, shared understanding of the environment."
+  "card2" "Autonomy Engine" "card2d" "Navigation, planning, and control that adapt in real time to terrain, sea state, airspace, and mission changes — even without GPS or connectivity."
+  "card3" "Secure Command & Telemetry" "card3d" "Encrypted links, fleet status, logs, and traceable events for accountable operations across every vehicle and domain."
+  "platformTitle" "From sensor signal to physical action."
+  "platformLead" "The Basilisk platform connects the entire mission chain across air, sea, and land: sensors, edge models, autonomous behaviours, human review, and post-mission intelligence."
+  "platformL1" "Vehicle events, sensor streams, and mission logs in one readable chain."
+  "platformL2" "Edge inference with human confirmation for high-trust decisions."
+  "platformL3" "Deployment model ready for private servers and controlled environments."
+  "feature1" "Edge autonomy" "feature1d" "Run perception and decision-making on the vehicle itself, even when connectivity is degraded or denied."
+  "feature2" "Cross-domain teaming" "feature2d" "Coordinate aerial, maritime, and ground assets as one team, sharing a common operating picture."
   "feature3" "Human command" "feature3d" "Keep operators in control with clear overrides, audit trails, and readable mission state."
-  "feature4" "System integration" "feature4d" "Connect drone fleets with APIs, dashboards, infrastructure tools, and private cloud environments."
+  "feature4" "System integration" "feature4d" "Integrate with existing vehicles, sensors, C2 systems, APIs, and private cloud environments."
   "opsTitle" "Designed for teams operating beyond the lab."
-  "opsLead" "The visual identity uses the day/night drone images as a product metaphor: bright operational clarity by day, stealth-grade awareness by night."
-  "app1" "Infrastructure" "app1d" "Inspection and monitoring for energy, logistics, industrial assets, and remote facilities."
-  "app2" "Security" "app2d" "Aerial overwatch, perimeter intelligence, event detection, and rapid situational assessment."
-  "app3" "Research" "app3d" "Experimental autonomy, multi-agent coordination, mapping, and field robotics prototyping."
-  "app4" "Logistics" "app4d" "Fleet status, route intelligence, area scanning, and operations support for mobile teams."
-  "missionTitle" "The basilisk watches, learns, and reports."
-  "missionLead" "Our mission is to make aerial robotics more useful, more trusted, and easier to deploy in serious environments. We combine AI engineering with pragmatic field software so teams can move from prototype to capability faster."
-  "ctaTitle" "Build your next aerial intelligence layer with Basilisk."
-  "ctaLead" "Let’s talk about autonomy, drone vision, secure deployments, and mission systems for your environment."
+  "opsLead" "Wherever machines need to operate on their own — in the sky, on the water, or on the ground — Basilisk turns autonomy into dependable capability."
+  "app1" "Infrastructure" "app1d" "Inspection and monitoring for energy, pipelines, ports, offshore assets, and remote facilities."
+  "app2" "Security & Defense" "app2d" "Multi-domain overwatch, perimeter and border intelligence, and rapid situational assessment."
+  "app3" "Maritime" "app3d" "Coastal and offshore patrol, underwater survey, and persistent maritime domain awareness."
+  "app4" "Logistics" "app4d" "Autonomous delivery and resupply across air, sea, and land routes for mobile teams."
+  "missionTitle" "The basilisk watches, learns, and acts."
+  "missionLead" "Our mission is to bring physical AI out of the lab and into the real world — making autonomous systems more useful, more trusted, and easier to deploy in serious environments across air, sea, and land."
+  "ctaTitle" "Build your next autonomous capability with Basilisk."
+  "ctaLead" "Let’s talk about physical AI, autonomy, and mission systems for your aerial, maritime, or ground platforms."
+  "footerTag" "Physical AI · autonomy · air · sea · land"
+  "rights" "All rights reserved."
+  "metaDesc" "Basilisk Systems builds physical AI and autonomy for air, sea, and land — perception, autonomy software, and secure mission systems for aerial, maritime, and ground platforms."
   "email" "technology@spectrumai.pl"
 -}}
 {{- if $isPL -}}
   {{- $copy = merge $copy (dict
-    "eyebrow" "Systemy autonomiczne · wizja AI · bezpieczne operacje terenowe"
-    "nav1" "Możliwości" "nav2" "Platforma" "nav3" "Operacje" "nav4" "Misja" "nav5" "Kontakt"
-    "heroTitle" "Basilisk tworzy inteligentne systemy lotnicze dla wymagającej autonomii."
-    "heroLead" "Projektujemy inteligencję dronów, odporne systemy percepcji i oprogramowanie misyjne dla zespołów, które potrzebują maszyn zdolnych widzieć, decydować i współdziałać w złożonych środowiskach."
-    "primary" "Poznaj platformę" "secondary" "Zobacz możliwości"
-    "capTitle" "Ostrzejszy system operacyjny dla lotu autonomicznego."
-    "capLead" "Basilisk Systems to nie tylko strona o dronach. To marka strażnika: uważna warstwa inteligencji powietrznej dla infrastruktury, bezpieczeństwa, badań i robotyki nowej generacji."
-    "platformTitle" "Od sygnału z drona do decyzji operacyjnej."
+    "eyebrow" "Fizyczna AI · autonomia · powietrze · morze · ląd"
+    "nav1" "Domeny" "nav2" "Możliwości" "nav3" "Platforma" "nav4" "Operacje" "nav5" "Misja" "nav6" "Kontakt"
+    "heroTitle" "Basilisk tworzy fizyczną AI dla autonomii w powietrzu, na morzu i na lądzie."
+    "heroPre" "Fizyczna AI dla autonomii " "heroAccent" "w powietrzu, na morzu i na lądzie."
+    "heroLead" "Tworzymy inteligencję, która pozwala maszynom postrzegać, decydować i działać w realnym świecie — oprogramowanie autonomiczne, odporną percepcję i systemy misyjne dla platform powietrznych, morskich i lądowych."
+    "primary" "Poznaj platformę" "secondary" "Zobacz domeny"
+    "capTitle" "Warstwa inteligencji dla maszyn w świecie fizycznym."
+    "capLead" "Basilisk Systems to firma fizycznej AI. Dajemy pojazdom i robotom zdolność postrzegania otoczenia, rozumowania i bezpiecznego działania — zawsze pod kontrolą człowieka."
+    "platformTitle" "Od sygnału z sensora do działania w świecie fizycznym."
     "opsTitle" "Projektowane dla zespołów działających poza laboratorium."
-    "missionTitle" "Basilisk obserwuje, uczy się i raportuje."
-    "ctaTitle" "Zbuduj następną warstwę inteligencji powietrznej z Basilisk."
-    "ctaLead" "Porozmawiajmy o autonomii, wizji dronowej, bezpiecznych wdrożeniach i systemach misyjnych."
+    "missionTitle" "Basilisk obserwuje, uczy się i działa."
+    "ctaTitle" "Zbuduj z Basilisk swoją następną zdolność autonomiczną."
+    "ctaLead" "Porozmawiajmy o fizycznej AI, autonomii i systemach misyjnych dla Twoich platform powietrznych, morskich i lądowych."
   ) -}}
 {{- else if $isFR -}}
   {{- $copy = merge $copy (dict
-    "eyebrow" "Systèmes autonomes · vision IA · opérations terrain sécurisées"
-    "nav1" "Capacités" "nav2" "Plateforme" "nav3" "Opérations" "nav4" "Mission" "nav5" "Contact"
-    "heroTitle" "Basilisk conçoit des systèmes aériens intelligents pour l’autonomie exigeante."
-    "heroLead" "Nous développons l’intelligence drone, des piles de perception robustes et des logiciels de mission pour les équipes qui ont besoin de machines capables de voir, décider et coordonner."
-    "primary" "Explorer la plateforme" "secondary" "Voir les capacités"
-    "capTitle" "Un système d’exploitation plus net pour le vol autonome."
-    "capLead" "Basilisk Systems n’est pas seulement un site de drones. C’est une marque sentinelle: une couche d’intelligence aérienne pour l’infrastructure, la sécurité, la recherche et la robotique de nouvelle génération."
-    "platformTitle" "Du signal drone à la décision opérationnelle."
+    "eyebrow" "IA physique · autonomie · air · mer · terre"
+    "nav1" "Domaines" "nav2" "Capacités" "nav3" "Plateforme" "nav4" "Opérations" "nav5" "Mission" "nav6" "Contact"
+    "heroTitle" "Basilisk conçoit l’IA physique pour l’autonomie dans les airs, en mer et sur terre."
+    "heroPre" "L’IA physique pour l’autonomie " "heroAccent" "air, mer & terre."
+    "heroLead" "Nous développons l’intelligence qui permet aux machines de percevoir, décider et agir dans le monde réel — logiciels d’autonomie, perception robuste et systèmes de mission pour plateformes aériennes, maritimes et terrestres."
+    "primary" "Explorer la plateforme" "secondary" "Voir nos domaines"
+    "capTitle" "La couche d’intelligence des machines dans le monde physique."
+    "capLead" "Basilisk Systems est une entreprise d’IA physique. Nous donnons aux véhicules et aux robots la capacité de percevoir leur environnement, de raisonner et d’agir en sécurité — sous le contrôle permanent de l’humain."
+    "platformTitle" "Du signal capteur à l’action physique."
     "opsTitle" "Conçu pour les équipes qui opèrent au-delà du laboratoire."
-    "missionTitle" "Le basilic observe, apprend et rapporte."
-    "ctaTitle" "Construisez votre prochaine couche d’intelligence aérienne avec Basilisk."
-    "ctaLead" "Parlons autonomie, vision drone, déploiements sécurisés et systèmes de mission."
+    "missionTitle" "Le basilic observe, apprend et agit."
+    "ctaTitle" "Construisez votre prochaine capacité autonome avec Basilisk."
+    "ctaLead" "Parlons IA physique, autonomie et systèmes de mission pour vos plateformes aériennes, maritimes ou terrestres."
   ) -}}
 {{- end -}}
 <!DOCTYPE html>
@@ -68,7 +83,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Basilisk Systems builds AI drone intelligence, autonomous mission software, and secure aerial operations platforms." />
+  <meta name="description" content="{{ index $copy "metaDesc" }}" />
   <title>{{ index $copy "heroTitle" }} | Basilisk Systems</title>
   <style>
     :root {
@@ -188,7 +203,7 @@
     .card { padding:30px; border-radius:30px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); position:relative; overflow:hidden; }
     .card::before { content:""; position:absolute; width:160px; height:160px; right:-70px; top:-70px; border-radius:50%; background:radial-gradient(circle, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 68%); }
     .card h3 { position:relative; font-size:1.22rem; margin-bottom:12px; }
-    .card p { position:relative; }
+    .card p, .card .kicker { position:relative; }
     .icon { width:56px; height:56px; border-radius:19px; display:grid; place-items:center; margin-bottom:22px; background:color-mix(in srgb, var(--cyan) 12%, transparent); border:1px solid color-mix(in srgb, var(--cyan) 16%, transparent); }
     .icon svg { width:29px; height:29px; stroke:var(--cyan); fill:none; stroke-width:2; }
     .split { display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; align-items:center; }
@@ -251,11 +266,11 @@
           <span class="brand-text">Basilisk <small>Systems</small></span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#capabilities">{{ index $copy "nav1" }}</a>
-          <a href="#platform">{{ index $copy "nav2" }}</a>
-          <a href="#operations">{{ index $copy "nav3" }}</a>
-          <a href="#mission">{{ index $copy "nav4" }}</a>
-          <a href="#contact">{{ index $copy "nav5" }}</a>
+          <a href="#domains">{{ index $copy "nav1" }}</a>
+          <a href="#capabilities">{{ index $copy "nav2" }}</a>
+          <a href="#platform">{{ index $copy "nav3" }}</a>
+          <a href="#operations">{{ index $copy "nav4" }}</a>
+          <a href="#mission">{{ index $copy "nav5" }}</a>
         </nav>
         <div class="actions">
           <a href="/en/" aria-label="English">EN</a><a href="/pl/" aria-label="Polski">PL</a><a href="/fr/" aria-label="Français">FR</a>
@@ -263,12 +278,12 @@
             <svg class="sun" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
             <svg class="moon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.8 6.8 0 0 0 21 12.8Z"/></svg>
           </button>
-          <a class="btn btn-primary" href="#contact">{{ index $copy "nav5" }}</a>
+          <a class="btn btn-primary" href="#contact">{{ index $copy "nav6" }}</a>
           <button class="menu-button" id="menuToggle" type="button" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
         </div>
       </div>
       <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-        <a href="#capabilities">{{ index $copy "nav1" }}</a><a href="#platform">{{ index $copy "nav2" }}</a><a href="#operations">{{ index $copy "nav3" }}</a><a href="#mission">{{ index $copy "nav4" }}</a><a href="#contact">{{ index $copy "nav5" }}</a>
+        <a href="#domains">{{ index $copy "nav1" }}</a><a href="#capabilities">{{ index $copy "nav2" }}</a><a href="#platform">{{ index $copy "nav3" }}</a><a href="#operations">{{ index $copy "nav4" }}</a><a href="#mission">{{ index $copy "nav5" }}</a><a href="#contact">{{ index $copy "nav6" }}</a>
       </nav>
     </header>
     <main id="top">
@@ -276,18 +291,28 @@
         <div class="container hero-grid">
           <div>
             <div class="eyebrow">{{ index $copy "eyebrow" }}</div>
-            <h1>{{ replace (index $copy "heroTitle") "hard edge" "hard <span>edge</span>" | safeHTML }}</h1>
+            <h1>{{ index $copy "heroPre" }}<span>{{ index $copy "heroAccent" }}</span></h1>
             <p class="lead">{{ index $copy "heroLead" }}</p>
-            <div class="hero-actions"><a class="btn btn-primary" href="#platform">{{ index $copy "primary" }}</a><a class="btn btn-ghost" href="#capabilities">{{ index $copy "secondary" }}</a></div>
+            <div class="hero-actions"><a class="btn btn-primary" href="#platform">{{ index $copy "primary" }}</a><a class="btn btn-ghost" href="#domains">{{ index $copy "secondary" }}</a></div>
             <div class="metrics" aria-label="Basilisk highlights">
               <div class="metric"><strong>{{ index $copy "stat1" }}</strong><span>{{ index $copy "stat1d" }}</span></div>
               <div class="metric"><strong>{{ index $copy "stat2" }}</strong><span>{{ index $copy "stat2d" }}</span></div>
               <div class="metric"><strong>{{ index $copy "stat3" }}</strong><span>{{ index $copy "stat3d" }}</span></div>
             </div>
           </div>
-          <div class="drone-stage" aria-label="Basilisk drone system visual">
+          <div class="drone-stage" aria-label="Basilisk autonomous system visual">
             <div class="hud-grid" aria-hidden="true"></div><div class="target" aria-hidden="true"></div>
-            <div class="scan-card"><div class="scan-logo" aria-hidden="true"></div><div><strong>BASILISK SENTINEL CORE</strong><span>Live aerial perception · mission telemetry · operator command layer</span></div></div>
+            <div class="scan-card"><div class="scan-logo" aria-hidden="true"></div><div><strong>{{ index $copy "scanTitle" }}</strong><span>{{ index $copy "scanText" }}</span></div></div>
+          </div>
+        </div>
+      </section>
+      <section id="domains">
+        <div class="container">
+          <div class="section-head"><h2>{{ index $copy "domTitle" }}</h2><p>{{ index $copy "domLead" }}</p></div>
+          <div class="cards">
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg></div><span class="kicker">{{ index $copy "airk" }}</span><h3>{{ index $copy "air" }}</h3><p>{{ index $copy "aird" }}</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 6c1.5 1.2 3 1.2 4.5 0S9.5 4.8 11 6s3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 12c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 18c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/></svg></div><span class="kicker">{{ index $copy "seak" }}</span><h3>{{ index $copy "sea" }}</h3><p>{{ index $copy "sead" }}</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="m3 20 6-11 4 6 3-4 5 9Z"/><circle cx="17" cy="5" r="2"/></svg></div><span class="kicker">{{ index $copy "landk" }}</span><h3>{{ index $copy "land" }}</h3><p>{{ index $copy "landd" }}</p></article>
           </div>
         </div>
       </section>
@@ -303,7 +328,7 @@
       </section>
       <section id="platform">
         <div class="container split">
-          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>{{ index $copy "platformTitle" }}</h2><p>{{ index $copy "platformLead" }}</p><ul class="panel-list"><li>Aircraft events, sensor streams, and mission logs in one readable chain.</li><li>Edge inference with human confirmation for high-trust decisions.</li><li>Deployment model ready for private servers and controlled environments.</li></ul></div>
+          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>{{ index $copy "platformTitle" }}</h2><p>{{ index $copy "platformLead" }}</p><ul class="panel-list"><li>{{ index $copy "platformL1" }}</li><li>{{ index $copy "platformL2" }}</li><li>{{ index $copy "platformL3" }}</li></ul></div>
           <div class="features">
             <div class="feature"><div class="feature-number">01</div><div><h3>{{ index $copy "feature1" }}</h3><p>{{ index $copy "feature1d" }}</p></div></div>
             <div class="feature"><div class="feature-number">02</div><div><h3>{{ index $copy "feature2" }}</h3><p>{{ index $copy "feature2d" }}</p></div></div>
@@ -318,7 +343,7 @@
           <div class="app-grid">
             <article class="app-card"><span class="kicker">Asset Intel</span><h3>{{ index $copy "app1" }}</h3><p>{{ index $copy "app1d" }}</p></article>
             <article class="app-card"><span class="kicker">Sentinel Mode</span><h3>{{ index $copy "app2" }}</h3><p>{{ index $copy "app2d" }}</p></article>
-            <article class="app-card"><span class="kicker">Autonomy Lab</span><h3>{{ index $copy "app3" }}</h3><p>{{ index $copy "app3d" }}</p></article>
+            <article class="app-card"><span class="kicker">Maritime Ops</span><h3>{{ index $copy "app3" }}</h3><p>{{ index $copy "app3d" }}</p></article>
             <article class="app-card"><span class="kicker">Fleet Ops</span><h3>{{ index $copy "app4" }}</h3><p>{{ index $copy "app4d" }}</p></article>
           </div>
         </div>
@@ -330,7 +355,7 @@
         <div class="container"><div class="cta-box"><h2>{{ index $copy "ctaTitle" }}</h2><p>{{ index $copy "ctaLead" }}</p><a class="btn btn-primary" href="mailto:{{ index $copy "email" }}">{{ index $copy "email" }}</a></div></div>
       </section>
     </main>
-    <footer><div class="container footer-inner"><div>© {{ now.Format "2006" }} Basilisk Systems. All rights reserved.</div><div>AI drone intelligence · autonomy · secure mission systems</div></div></footer>
+    <footer><div class="container footer-inner"><div>© {{ now.Format "2006" }} Basilisk Systems. {{ index $copy "rights" }}</div><div>{{ index $copy "footerTag" }}</div></div></footer>
   </div>
   <script>
     const root = document.documentElement;
