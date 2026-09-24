@@ -60,6 +60,15 @@
   "fLand1" "Off-road navigation in unstructured terrain"
   "fLand2" "Autonomous resupply and load carrying"
   "fLand3" "Perimeter patrol and hazardous-area operations"
+  "teamEyebrow" "Cross-domain teaming"
+  "teamTitle" "One operating picture across every domain."
+  "teamLead" "Aerial, maritime, and ground vehicles share perception and intent in real time — so operators command one coordinated team instead of separate machines."
+  "team1" "Overwatch"
+  "team1s" "Tracking area of interest"
+  "team2" "Patrol"
+  "team2s" "Holding sector"
+  "team3" "Resupply"
+  "team3s" "En route to waypoint"
   "email" "technology@spectrumai.pl"
 -}}
 {{- if $isPL -}}
@@ -123,6 +132,15 @@
     "fLand1" "Nawigacja terenowa w nieuporządkowanym środowisku"
     "fLand2" "Autonomiczne zaopatrzenie i transport ładunków"
     "fLand3" "Patrole perymetru i operacje w strefach niebezpiecznych"
+    "teamEyebrow" "Współpraca międzydomenowa"
+    "teamTitle" "Jeden obraz operacyjny we wszystkich domenach."
+    "teamLead" "Pojazdy powietrzne, morskie i lądowe dzielą percepcję i zamiar w czasie rzeczywistym — operator dowodzi jednym zgranym zespołem, a nie osobnymi maszynami."
+    "team1" "Obserwacja"
+    "team1s" "Śledzenie obszaru zainteresowania"
+    "team2" "Patrol"
+    "team2s" "Utrzymanie sektora"
+    "team3" "Zaopatrzenie"
+    "team3s" "W drodze do punktu"
   ) -}}
 {{- else if $isFR -}}
   {{- $copy = merge $copy (dict
@@ -185,6 +203,15 @@
     "fLand1" "Navigation tout-terrain en milieu non structuré"
     "fLand2" "Ravitaillement et transport de charges autonomes"
     "fLand3" "Patrouille périmétrique et opérations en zones dangereuses"
+    "teamEyebrow" "Coopération multi-domaine"
+    "teamTitle" "Une seule situation opérationnelle, tous domaines confondus."
+    "teamLead" "Véhicules aériens, maritimes et terrestres partagent perception et intention en temps réel — l’opérateur commande une équipe coordonnée, et non des machines isolées."
+    "team1" "Surveillance"
+    "team1s" "Suivi de la zone d’intérêt"
+    "team2" "Patrouille"
+    "team2s" "Maintien du secteur"
+    "team3" "Ravitaillement"
+    "team3s" "En route vers le point"
   ) -}}
 {{- end -}}
 <!DOCTYPE html>
@@ -345,6 +372,18 @@
     .show-tag { position:absolute; left:20px; bottom:20px; z-index:4; padding:9px 14px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); backdrop-filter:blur(12px); color:var(--tag-ink); font-weight:950; font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
     .show-copy h3 { font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.02; letter-spacing:-.05em; margin-bottom:14px; }
     .show-copy .panel-list { margin-top:20px; }
+    .team-band { border-radius:44px; padding:clamp(34px, 5vw, 64px); min-height:520px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; background:#14110e var(--rover-img) 70% center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); overflow:hidden; position:relative; color:white; isolation:isolate; }
+    .team-band::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, var(--rover-glass), var(--rover-shade) 50%, transparent), linear-gradient(0deg, var(--rover-shade), transparent 55%); }
+    .team-band .hud-grid { z-index:-1; }
+    .team-copy { max-width:640px; }
+    .team-copy h2 { font-size:clamp(2.2rem, 4.8vw, 4.4rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
+    .team-copy p { color:rgba(255,255,255,.78); font-size:1.08rem; }
+    .team-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .team-stat { padding:18px 20px; border-radius:22px; background:var(--rover-glass); border:1px solid var(--rover-edge); backdrop-filter:blur(12px); }
+    .team-stat small { display:flex; align-items:center; gap:8px; color:rgba(255,236,214,.72); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .team-stat small::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 14px var(--success); }
+    .team-stat strong { display:block; font-size:1.08rem; margin-bottom:4px; }
+    .team-stat span { color:rgba(255,255,255,.70); font-size:.9rem; }
     .ops-band { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--cyan) 7%, transparent), transparent); }
     .app-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
     .app-card { min-height:245px; padding:24px; border-radius:28px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
@@ -376,7 +415,8 @@
     @media (max-width: 640px) {
       .container { width:min(100% - 26px, 1180px); }
       .hero { padding-top:50px; }
-      .metrics, .app-grid { grid-template-columns:1fr; }
+      .metrics, .app-grid, .team-stats { grid-template-columns:1fr; }
+      .team-band { border-radius:32px; min-height:0; }
       .drone-stage { min-height:430px; border-radius:32px; }
       .show-media { min-height:260px; border-radius:28px; }
       .scan-card { grid-template-columns:1fr; }
@@ -486,6 +526,9 @@
             <div class="feature"><div class="feature-number">04</div><div><h3>{{ index $copy "feature4" }}</h3><p>{{ index $copy "feature4d" }}</p></div></div>
           </div>
         </div>
+      </section>
+      <section id="teaming">
+        <div class="container"><div class="team-band" role="img" aria-label="{{ index $copy "teamEyebrow" }}"><div class="hud-grid" aria-hidden="true"></div><div class="team-copy"><div class="eyebrow">{{ index $copy "teamEyebrow" }}</div><h2>{{ index $copy "teamTitle" }}</h2><p>{{ index $copy "teamLead" }}</p></div><div class="team-stats"><div class="team-stat"><small>{{ index $copy "air" }}</small><strong>{{ index $copy "team1" }}</strong><span>{{ index $copy "team1s" }}</span></div><div class="team-stat"><small>{{ index $copy "sea" }}</small><strong>{{ index $copy "team2" }}</strong><span>{{ index $copy "team2s" }}</span></div><div class="team-stat"><small>{{ index $copy "land" }}</small><strong>{{ index $copy "team3" }}</strong><span>{{ index $copy "team3s" }}</span></div></div></div></div>
       </section>
       <section id="operations" class="ops-band">
         <div class="container">
