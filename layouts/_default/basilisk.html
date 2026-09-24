@@ -69,6 +69,13 @@
   "team2s" "Holding sector"
   "team3" "Resupply"
   "team3s" "En route to waypoint"
+  "visionEyebrow" "Our vision"
+  "visionPre" "Machines that don’t just move — "
+  "visionAccent" "they understand the world they move through."
+  "visionLead" "The next decade belongs to physical AI: intelligence that leaves the screen and enters the real world. Basilisk is building the autonomy core that lets any vehicle — in the sky, at sea, or on the ground — perceive, reason, and act alongside people."
+  "num1l" "autonomy core"
+  "num2l" "domains: air, sea, land"
+  "num3l" "operations, day and night"
   "email" "technology@spectrumai.pl"
 -}}
 {{- if $isPL -}}
@@ -141,6 +148,13 @@
     "team2s" "Utrzymanie sektora"
     "team3" "Zaopatrzenie"
     "team3s" "W drodze do punktu"
+    "visionEyebrow" "Nasza wizja"
+    "visionPre" "Maszyny, które nie tylko się poruszają — "
+    "visionAccent" "rozumieją świat, w którym działają."
+    "visionLead" "Następna dekada należy do fizycznej AI: inteligencji, która wychodzi z ekranu do realnego świata. Basilisk buduje rdzeń autonomii, dzięki któremu każdy pojazd — w powietrzu, na morzu czy na lądzie — postrzega, rozumuje i działa ramię w ramię z ludźmi."
+    "num1l" "rdzeń autonomii"
+    "num2l" "domeny: powietrze, morze, ląd"
+    "num3l" "operacje w dzień i w nocy"
   ) -}}
 {{- else if $isFR -}}
   {{- $copy = merge $copy (dict
@@ -212,6 +226,13 @@
     "team2s" "Maintien du secteur"
     "team3" "Ravitaillement"
     "team3s" "En route vers le point"
+    "visionEyebrow" "Notre vision"
+    "visionPre" "Des machines qui ne se contentent pas de bouger — "
+    "visionAccent" "elles comprennent le monde qu’elles traversent."
+    "visionLead" "La prochaine décennie appartient à l’IA physique : une intelligence qui quitte l’écran pour entrer dans le monde réel. Basilisk construit le cœur d’autonomie qui permet à tout véhicule — dans les airs, en mer ou sur terre — de percevoir, raisonner et agir aux côtés de l’humain."
+    "num1l" "cœur d’autonomie"
+    "num2l" "domaines : air, mer, terre"
+    "num3l" "opérations, de jour comme de nuit"
   ) -}}
 {{- end -}}
 <!DOCTYPE html>
@@ -387,6 +408,15 @@
     .ticker:hover .ticker-track { animation-play-state:paused; }
     @keyframes ticker { to { transform:translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { .ticker-track { animation:none; } }
+    .vision { padding:120px 0; background:radial-gradient(ellipse at 20% 30%, color-mix(in srgb, var(--cyan) 12%, transparent), transparent 60%), radial-gradient(ellipse at 85% 80%, color-mix(in srgb, var(--violet) 12%, transparent), transparent 55%); }
+    .vision h2 { font-size:clamp(2.6rem, 6.4vw, 6.4rem); line-height:.94; letter-spacing:-.065em; margin-bottom:34px; max-width:20ch; }
+    .vision h2 span { background:linear-gradient(92deg, var(--cyan), var(--blue) 55%, var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .vision .lead { max-width:760px; margin-bottom:64px; }
+    .nums { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-strong); }
+    .num { padding:28px 28px 0 0; }
+    .num + .num { padding-left:28px; border-left:1px solid var(--line); }
+    .num strong { display:block; font-size:clamp(3.6rem, 8vw, 7.4rem); line-height:.9; letter-spacing:-.07em; background:linear-gradient(180deg, var(--ink), color-mix(in srgb, var(--ink) 35%, transparent)); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:12px; }
+    .num span { color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:.1em; font-size:.8rem; }
     .showcase { display:grid; gap:28px; }
     .show-row { display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
     .show-row.reverse .show-media { order:2; }
@@ -446,7 +476,10 @@
       .hero-panes { height:52vh; }
       .hero-panes .target { width:180px; height:180px; }
       .pane-label { font-size:0; gap:0; padding:4px; }
-      .metrics, .app-grid, .team-stats { grid-template-columns:1fr; }
+      .metrics, .app-grid, .team-stats, .nums { grid-template-columns:1fr; }
+      .num + .num { padding-left:0; border-left:0; border-top:1px solid var(--line); }
+      .num { padding-bottom:22px; }
+      .vision { padding:80px 0; }
       .team-band { border-radius:32px; min-height:0; }
       .show-media { min-height:260px; border-radius:28px; }
       .target { width:190px; height:190px; right:6%; }
@@ -535,6 +568,14 @@
               <div class="show-copy"><span class="kicker">{{ index $copy "landk" }}</span><h3>{{ index $copy "fLandT" }}</h3><p>{{ index $copy "fLandD" }}</p><ul class="panel-list"><li>{{ index $copy "fLand1" }}</li><li>{{ index $copy "fLand2" }}</li><li>{{ index $copy "fLand3" }}</li></ul></div>
             </article>
           </div>
+        </div>
+      </section>
+      <section id="vision" class="vision">
+        <div class="container">
+          <div class="eyebrow">{{ index $copy "visionEyebrow" }}</div>
+          <h2>{{ index $copy "visionPre" }}<span>{{ index $copy "visionAccent" }}</span></h2>
+          <p class="lead">{{ index $copy "visionLead" }}</p>
+          <div class="nums"><div class="num"><strong>1</strong><span>{{ index $copy "num1l" }}</span></div><div class="num"><strong>3</strong><span>{{ index $copy "num2l" }}</span></div><div class="num"><strong>24/7</strong><span>{{ index $copy "num3l" }}</span></div></div>
         </div>
       </section>
       <section id="capabilities">
