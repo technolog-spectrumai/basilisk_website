@@ -43,6 +43,23 @@
   "footerTag" "Physical AI · autonomy · air · sea · land"
   "rights" "All rights reserved."
   "metaDesc" "Basilisk Systems builds physical AI and autonomy for air, sea, and land — perception, autonomy software, and secure mission systems for aerial, maritime, and ground platforms."
+  "fleetTitle" "Built for the air, the sea, and the ground."
+  "fleetLead" "The same Basilisk autonomy core runs on every platform — tuned to the physics, sensors, and risks of each environment."
+  "fAirT" "Eyes above the mission."
+  "fAirD" "Autonomous drones that survey, inspect, and track from above — sharing what they see with every other asset in the fleet."
+  "fAir1" "Beyond-visual-line-of-sight missions with onboard perception"
+  "fAir2" "GNSS-denied navigation and obstacle avoidance"
+  "fAir3" "Live video, mapping, and object tracking"
+  "fSeaT" "Persistent presence at sea."
+  "fSeaD" "Uncrewed surface vessels that patrol, survey, and escort in open water — day and night, in rough sea states."
+  "fSea1" "Long-endurance patrol and maritime domain awareness"
+  "fSea2" "Radar, AIS, and electro-optical sensor fusion"
+  "fSea3" "COLREGs-aware navigation and collision avoidance"
+  "fLandT" "Reach where roads end."
+  "fLandD" "Autonomous ground vehicles that carry, scout, and secure across mud, forest, and broken terrain."
+  "fLand1" "Off-road navigation in unstructured terrain"
+  "fLand2" "Autonomous resupply and load carrying"
+  "fLand3" "Perimeter patrol and hazardous-area operations"
   "email" "technology@spectrumai.pl"
 -}}
 {{- if $isPL -}}
@@ -89,6 +106,23 @@
     "footerTag" "Fizyczna AI · autonomia · powietrze · morze · ląd"
     "rights" "Wszelkie prawa zastrzeżone."
     "metaDesc" "Basilisk Systems tworzy fizyczną AI i autonomię dla powietrza, morza i lądu — percepcję, oprogramowanie autonomiczne i bezpieczne systemy misyjne."
+    "fleetTitle" "Stworzone dla powietrza, morza i lądu."
+    "fleetLead" "Ten sam rdzeń autonomii Basilisk działa na każdej platformie — dostrojony do fizyki, sensorów i zagrożeń każdego środowiska."
+    "fAirT" "Oczy ponad misją."
+    "fAirD" "Autonomiczne drony, które obserwują, inspekcjonują i śledzą z góry — dzieląc się obrazem z każdym innym zasobem floty."
+    "fAir1" "Misje poza zasięgiem wzroku z percepcją pokładową"
+    "fAir2" "Nawigacja bez GNSS i omijanie przeszkód"
+    "fAir3" "Wideo na żywo, mapowanie i śledzenie obiektów"
+    "fSeaT" "Stała obecność na morzu."
+    "fSeaD" "Bezzałogowe jednostki nawodne, które patrolują, mierzą i eskortują na otwartych wodach — w dzień i w nocy, przy wysokiej fali."
+    "fSea1" "Długotrwałe patrole i świadomość sytuacyjna na morzu"
+    "fSea2" "Fuzja danych z radaru, AIS i sensorów optoelektronicznych"
+    "fSea3" "Nawigacja zgodna z COLREG i unikanie kolizji"
+    "fLandT" "Tam, gdzie kończą się drogi."
+    "fLandD" "Autonomiczne pojazdy naziemne, które przewożą, rozpoznają i zabezpieczają teren — w błocie, lesie i trudnym terenie."
+    "fLand1" "Nawigacja terenowa w nieuporządkowanym środowisku"
+    "fLand2" "Autonomiczne zaopatrzenie i transport ładunków"
+    "fLand3" "Patrole perymetru i operacje w strefach niebezpiecznych"
   ) -}}
 {{- else if $isFR -}}
   {{- $copy = merge $copy (dict
@@ -134,6 +168,23 @@
     "footerTag" "IA physique · autonomie · air · mer · terre"
     "rights" "Tous droits réservés."
     "metaDesc" "Basilisk Systems développe l’IA physique et l’autonomie pour l’air, la mer et la terre — perception, logiciels d’autonomie et systèmes de mission sécurisés."
+    "fleetTitle" "Conçu pour l’air, la mer et la terre."
+    "fleetLead" "Le même cœur d’autonomie Basilisk équipe chaque plateforme — adapté à la physique, aux capteurs et aux risques de chaque environnement."
+    "fAirT" "Des yeux au-dessus de la mission."
+    "fAirD" "Des drones autonomes qui surveillent, inspectent et suivent depuis le ciel — et partagent ce qu’ils voient avec toute la flotte."
+    "fAir1" "Missions hors vue avec perception embarquée"
+    "fAir2" "Navigation sans GNSS et évitement d’obstacles"
+    "fAir3" "Vidéo en direct, cartographie et suivi d’objets"
+    "fSeaT" "Une présence permanente en mer."
+    "fSeaD" "Des navires de surface sans équipage qui patrouillent, relèvent et escortent en haute mer — de jour comme de nuit, par mer formée."
+    "fSea1" "Patrouille longue endurance et connaissance du domaine maritime"
+    "fSea2" "Fusion radar, AIS et capteurs électro-optiques"
+    "fSea3" "Navigation conforme au COLREG et anticollision"
+    "fLandT" "Aller là où la route s’arrête."
+    "fLandD" "Des véhicules terrestres autonomes qui transportent, éclairent et sécurisent — dans la boue, la forêt et le terrain accidenté."
+    "fLand1" "Navigation tout-terrain en milieu non structuré"
+    "fLand2" "Ravitaillement et transport de charges autonomes"
+    "fLand3" "Patrouille périmétrique et opérations en zones dangereuses"
   ) -}}
 {{- end -}}
 <!DOCTYPE html>
@@ -278,6 +329,18 @@
     .feature { display:grid; grid-template-columns:50px 1fr; gap:16px; padding:20px; border-radius:24px; background:var(--surface); border:1px solid var(--line); }
     .feature-number { width:50px; height:50px; border-radius:17px; display:grid; place-items:center; background:linear-gradient(135deg,var(--cyan),var(--blue)); color:white; font-weight:950; }
     .feature h3 { margin-bottom:6px; }
+    .showcase { display:grid; gap:28px; }
+    .show-row { display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
+    .show-row.reverse .show-media { order:2; }
+    .show-media { min-height:380px; border-radius:36px; position:relative; overflow:hidden; background:#071421 center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); isolation:isolate; }
+    .show-media::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(2,8,16,.04), rgba(2,8,16,.42)); }
+    :root:not([data-theme="dark"]) .show-media::before { background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(8,42,78,.22)); }
+    .media-air { background-image:var(--hero-img); }
+    .media-sea { background-image:var(--boat-img); }
+    .media-land { background-image:var(--rover-img); }
+    .show-tag { position:absolute; left:20px; bottom:20px; z-index:4; padding:9px 14px; border-radius:999px; background:rgba(3,10,18,.66); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(12px); color:white; font-weight:950; font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
+    .show-copy h3 { font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.02; letter-spacing:-.05em; margin-bottom:14px; }
+    .show-copy .panel-list { margin-top:20px; }
     .ops-band { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--cyan) 7%, transparent), transparent); }
     .app-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
     .app-card { min-height:245px; padding:24px; border-radius:28px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
@@ -298,7 +361,8 @@
     .mobile-panel { display:none; }
     @media (max-width: 1040px) { .app-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width: 920px) {
-      .hero-grid, .split, .cards { grid-template-columns:1fr; }
+      .hero-grid, .split, .cards, .show-row { grid-template-columns:1fr; gap:22px; }
+      .show-row.reverse .show-media { order:0; }
       .drone-stage { min-height:500px; }
       .nav-links, .actions .btn { display:none; }
       .menu-button { display:grid; }
@@ -310,6 +374,7 @@
       .hero { padding-top:50px; }
       .metrics, .app-grid { grid-template-columns:1fr; }
       .drone-stage { min-height:430px; border-radius:32px; }
+      .show-media { min-height:260px; border-radius:28px; }
       .scan-card { grid-template-columns:1fr; }
       .target { width:190px; height:190px; right:6%; }
       section { padding:64px 0; }
@@ -375,6 +440,25 @@
             <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg></div><span class="kicker">{{ index $copy "airk" }}</span><h3>{{ index $copy "air" }}</h3><p>{{ index $copy "aird" }}</p></article>
             <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 6c1.5 1.2 3 1.2 4.5 0S9.5 4.8 11 6s3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 12c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 18c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/></svg></div><span class="kicker">{{ index $copy "seak" }}</span><h3>{{ index $copy "sea" }}</h3><p>{{ index $copy "sead" }}</p></article>
             <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="m3 20 6-11 4 6 3-4 5 9Z"/><circle cx="17" cy="5" r="2"/></svg></div><span class="kicker">{{ index $copy "landk" }}</span><h3>{{ index $copy "land" }}</h3><p>{{ index $copy "landd" }}</p></article>
+          </div>
+        </div>
+      </section>
+      <section id="fleet">
+        <div class="container">
+          <div class="section-head"><h2>{{ index $copy "fleetTitle" }}</h2><p>{{ index $copy "fleetLead" }}</p></div>
+          <div class="showcase">
+            <article class="show-row">
+              <div class="show-media media-air" role="img" aria-label="{{ index $copy "air" }}"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">{{ index $copy "air" }} · UAS</span></div>
+              <div class="show-copy"><span class="kicker">{{ index $copy "airk" }}</span><h3>{{ index $copy "fAirT" }}</h3><p>{{ index $copy "fAirD" }}</p><ul class="panel-list"><li>{{ index $copy "fAir1" }}</li><li>{{ index $copy "fAir2" }}</li><li>{{ index $copy "fAir3" }}</li></ul></div>
+            </article>
+            <article class="show-row reverse">
+              <div class="show-media media-sea" role="img" aria-label="{{ index $copy "sea" }}"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">{{ index $copy "sea" }} · USV</span></div>
+              <div class="show-copy"><span class="kicker">{{ index $copy "seak" }}</span><h3>{{ index $copy "fSeaT" }}</h3><p>{{ index $copy "fSeaD" }}</p><ul class="panel-list"><li>{{ index $copy "fSea1" }}</li><li>{{ index $copy "fSea2" }}</li><li>{{ index $copy "fSea3" }}</li></ul></div>
+            </article>
+            <article class="show-row">
+              <div class="show-media media-land" role="img" aria-label="{{ index $copy "land" }}"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">{{ index $copy "land" }} · UGV</span></div>
+              <div class="show-copy"><span class="kicker">{{ index $copy "landk" }}</span><h3>{{ index $copy "fLandT" }}</h3><p>{{ index $copy "fLandD" }}</p><ul class="panel-list"><li>{{ index $copy "fLand1" }}</li><li>{{ index $copy "fLand2" }}</li><li>{{ index $copy "fLand3" }}</li></ul></div>
+            </article>
           </div>
         </div>
       </section>
