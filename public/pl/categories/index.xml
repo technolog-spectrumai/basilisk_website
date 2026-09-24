@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Basilisk Systems</title>
-    <link>http://localhost:1313/pl/categories/</link>
+    <link>https://basilisk-systems.netlify.app/pl/categories/</link>
     <description>Recent content in Categories on Basilisk Systems</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>pl</language>
-    <atom:link href="http://localhost:1313/pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://basilisk-systems.netlify.app/pl/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

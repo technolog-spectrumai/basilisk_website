@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+	<meta name="generator" content="Hugo 0.148.2">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Basilisk Systems builds AI drone intelligence, autonomous mission software, and secure aerial operations platforms." />
-  <title>Basilisk tworzy inteligentne systemy lotnicze dla wymagającej autonomii. | Basilisk Systems</title>
+  <meta name="description" content="Basilisk Systems tworzy fizyczną AI i autonomię dla powietrza, morza i lądu — percepcję, oprogramowanie autonomiczne i bezpieczne systemy misyjne." />
+  <title>Basilisk tworzy fizyczną AI dla autonomii w powietrzu, na morzu i na lądzie. | Basilisk Systems</title>
   <style>
     :root {
       color-scheme: light;
@@ -25,8 +26,13 @@
       --shadow: 0 28px 90px rgba(19, 59, 111, .16);
       --shadow-soft: 0 18px 50px rgba(19, 59, 111, .10);
       --header: rgba(246, 251, 255, .74);
-      --hero-img: url('/img/baz_li.png');
+      --hero-img: url('/img/drone_day.jpg');
+      --boat-img: url('/img/boat_day.jpg');
+      --rover-img: url('/img/rover_day.jpg');
       --logo-img: url('/img/logo_b.png');
+      --drone-shade: rgba(58,128,190,.26); --drone-glow: rgba(255,255,255,.18); --drone-glass: rgba(236,246,255,.72); --drone-ink: #06111f; --drone-sub: #20324a; --drone-edge: rgba(255,255,255,.72);
+      --boat-shade: rgba(28,44,66,.50); --boat-glass: rgba(26,40,58,.74); --boat-edge: rgba(190,210,235,.20);
+      --rover-shade: rgba(46,54,38,.46); --rover-glass: rgba(40,47,33,.70); --rover-edge: rgba(222,236,200,.22); --rover-sub: rgba(226,238,208,.78);
       --gradient: radial-gradient(circle at 18% 10%, rgba(11,183,255,.18), transparent 28rem), radial-gradient(circle at 82% 16%, rgba(127,134,255,.16), transparent 32rem), linear-gradient(180deg, #f8fdff 0%, #eaf8ff 52%, #ffffff 100%);
     }
     :root[data-theme="dark"] {
@@ -48,8 +54,13 @@
       --shadow: 0 32px 110px rgba(0,0,0,.45);
       --shadow-soft: 0 18px 60px rgba(0,0,0,.30);
       --header: rgba(5, 11, 19, .78);
-      --hero-img: url('/img/baz.jpg');
+      --hero-img: url('/img/drone_night.jpg');
+      --boat-img: url('/img/boat_night.jpg');
+      --rover-img: url('/img/rover_night.jpg');
       --logo-img: url('/img/logo_w.png');
+      --drone-shade: rgba(10,20,30,.58); --drone-glow: rgba(53,217,255,.12); --drone-glass: rgba(8,17,26,.68); --drone-ink: #ffffff; --drone-sub: rgba(255,255,255,.72); --drone-edge: rgba(160,200,230,.16);
+      --boat-shade: rgba(8,16,29,.58); --boat-glass: rgba(8,16,28,.80); --boat-edge: rgba(150,180,230,.16);
+      --rover-shade: rgba(24,20,16,.56); --rover-glass: rgba(22,19,15,.68); --rover-edge: rgba(255,222,186,.16); --rover-sub: rgba(255,236,214,.72);
       --gradient: radial-gradient(circle at 16% 8%, rgba(53,217,255,.13), transparent 28rem), radial-gradient(circle at 88% 12%, rgba(126,136,255,.13), transparent 32rem), linear-gradient(180deg, #050b13 0%, #071421 58%, #050b13 100%);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,9 +77,8 @@
     p { color: color-mix(in srgb, var(--ink) 68%, transparent); line-height: 1.7; }
     .page { position: relative; overflow: hidden; }
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-    .noise, .scanlines { pointer-events:none; position:fixed; inset:0; z-index:0; }
+    .noise { pointer-events:none; position:fixed; inset:0; z-index:0; }
     .noise { opacity:.16; background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,.5) 0 1px, transparent 1px); background-size: 9px 9px; mix-blend-mode: overlay; }
-    .scanlines { opacity:.08; background: repeating-linear-gradient(180deg, transparent 0 7px, var(--ink) 8px); }
     header { position: sticky; top: 0; z-index: 30; backdrop-filter: blur(22px); background: var(--header); border-bottom: 1px solid var(--line); }
     .nav { height: 82px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .brand { display:flex; align-items:center; gap:14px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
@@ -91,7 +101,6 @@
     .btn-primary { background: linear-gradient(135deg, var(--cyan), var(--blue) 52%, var(--violet)); color:white; box-shadow:0 18px 44px color-mix(in srgb, var(--blue) 28%, transparent); }
     .btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
     .hero { padding: 78px 0 92px; position:relative; z-index:1; }
-    .hero-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap:60px; align-items:center; }
     .eyebrow { display:inline-flex; align-items:center; gap:10px; padding:9px 14px; border-radius:999px; background: color-mix(in srgb, var(--cyan) 12%, transparent); border:1px solid color-mix(in srgb, var(--cyan) 18%, transparent); color: var(--cyan); font-weight:950; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:22px; }
     .eyebrow::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 20px var(--success); }
     h1 { font-size: clamp(3.2rem, 7.4vw, 7.2rem); line-height:.88; letter-spacing:-.075em; margin-bottom:26px; }
@@ -102,17 +111,11 @@
     .metric { padding:18px; border-radius:24px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
     .metric strong { display:block; margin-bottom:5px; font-size:1.1rem; }
     .metric span { display:block; color:var(--muted); font-size:.88rem; line-height:1.45; }
-    .drone-stage { min-height: 570px; border-radius: 46px; position:relative; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line-strong); background: #071421 var(--hero-img) center/cover no-repeat; isolation:isolate; }
-    .drone-stage::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 72% 26%, rgba(53,217,255,.12), transparent 20rem), linear-gradient(180deg, rgba(2,8,16,.08), rgba(2,8,16,.54)); z-index:1; }
-    :root:not([data-theme="dark"]) .drone-stage::before { background: radial-gradient(circle at 74% 22%, rgba(255,255,255,.14), transparent 22rem), linear-gradient(180deg, rgba(255,255,255,.03), rgba(8,42,78,.20)); }
     .hud-grid { position:absolute; inset:0; z-index:2; opacity:.45; background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(circle at 70% 34%, black, transparent 65%); }
     .target { position:absolute; width:260px; height:260px; right:12%; top:12%; border:1px solid rgba(255,255,255,.38); border-radius:50%; z-index:3; animation: spin 18s linear infinite; }
     .target::before, .target::after { content:""; position:absolute; inset:34px; border:1px solid rgba(53,217,255,.34); border-radius:50%; }
     .target::after { inset:72px; border-color:rgba(255,255,255,.22); }
-    .scan-card { position:absolute; left:24px; right:24px; bottom:24px; z-index:4; border-radius:26px; padding:22px; background:rgba(3,10,18,.66); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(14px); color:white; display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:center; }
-    .scan-logo { width:66px; height:66px; border-radius:22px; background: rgba(255,255,255,.10) var(--logo-img) center/78% auto no-repeat; border:1px solid rgba(255,255,255,.18); }
-    .scan-card strong { display:block; font-size:1.05rem; margin-bottom:6px; }
-    .scan-card span { color:rgba(255,255,255,.72); line-height:1.45; font-size:.94rem; }
+    .scan-logo { width:66px; height:66px; border-radius:22px; background: color-mix(in srgb, var(--drone-ink) 8%, transparent) var(--logo-img) center/78% auto no-repeat; border:1px solid var(--drone-edge); }
     @keyframes spin { to { transform: rotate(360deg); } }
     section { padding: 88px 0; position:relative; z-index:1; }
     .section-head { max-width:820px; margin-bottom:42px; }
@@ -123,7 +126,7 @@
     .card { padding:30px; border-radius:30px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); position:relative; overflow:hidden; }
     .card::before { content:""; position:absolute; width:160px; height:160px; right:-70px; top:-70px; border-radius:50%; background:radial-gradient(circle, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 68%); }
     .card h3 { position:relative; font-size:1.22rem; margin-bottom:12px; }
-    .card p { position:relative; }
+    .card p, .card .kicker { position:relative; }
     .icon { width:56px; height:56px; border-radius:19px; display:grid; place-items:center; margin-bottom:22px; background:color-mix(in srgb, var(--cyan) 12%, transparent); border:1px solid color-mix(in srgb, var(--cyan) 16%, transparent); }
     .icon svg { width:29px; height:29px; stroke:var(--cyan); fill:none; stroke-width:2; }
     .split { display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; align-items:center; }
@@ -136,14 +139,85 @@
     .feature { display:grid; grid-template-columns:50px 1fr; gap:16px; padding:20px; border-radius:24px; background:var(--surface); border:1px solid var(--line); }
     .feature-number { width:50px; height:50px; border-radius:17px; display:grid; place-items:center; background:linear-gradient(135deg,var(--cyan),var(--blue)); color:white; font-weight:950; }
     .feature h3 { margin-bottom:6px; }
+    .hero-wide { padding:0 0 72px; }
+    .hero-panes { position:relative; display:flex; gap:3px; height:clamp(440px, 68vh, 760px); overflow:hidden; isolation:isolate; -webkit-mask-image:linear-gradient(180deg, #000 48%, transparent 99%); mask-image:linear-gradient(180deg, #000 48%, transparent 99%); }
+    .pane { flex:1; position:relative; background:#071421 center/cover no-repeat; transition:flex .7s cubic-bezier(.2,.8,.2,1); }
+    .pane::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 25%, var(--shade)); }
+    .hero-panes:hover .pane { flex:.85; }
+    .hero-panes .pane:hover { flex:1.5; }
+    .pane-label { position:absolute; left:clamp(16px, 2.4vw, 34px); top:clamp(18px, 3vw, 36px); z-index:4; display:flex; align-items:center; gap:10px; padding:8px 14px 8px 8px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); backdrop-filter:blur(12px); color:var(--tag-ink); font-weight:950; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; }
+    .pane-label b { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,var(--cyan),var(--blue)); color:white; font-size:.68rem; letter-spacing:0; }
+    .hero-panes .hud-grid { pointer-events:none; }
+    .hero-panes .target { right:8%; top:10%; width:300px; height:300px; pointer-events:none; }
+    .hero-fade { position:absolute; inset:0; z-index:3; pointer-events:none; background:linear-gradient(180deg, transparent 32%, color-mix(in srgb, var(--bg) 62%, transparent) 78%); }
+    .hero-copy { position:relative; z-index:5; margin-top:clamp(-340px, -24vw, -150px); }
+    .hero-wide h1 { font-size:clamp(3.4rem, 9.6vw, 10rem); line-height:.84; letter-spacing:-.075em; max-width:14ch; }
+    .hero-wide h1 span { background:linear-gradient(92deg, var(--cyan), var(--blue) 55%, var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 0 28px color-mix(in srgb, var(--cyan) 30%, transparent)); }
+    .hero-wide .eyebrow { background:color-mix(in srgb, var(--surface-strong) 72%, transparent); backdrop-filter:blur(12px); }
+    .hero-row { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:end; margin-bottom:34px; }
+    .hero-row .lead { margin-bottom:0; }
+    .hero-row .hero-actions { margin-bottom:0; justify-content:flex-end; }
+    .hero-wide .metrics { max-width:none; }
+    .scan-chip { position:absolute; right:0; top:0; display:flex; align-items:center; gap:12px; padding:10px 16px 10px 10px; border-radius:22px; background:var(--drone-glass); border:1px solid var(--drone-edge); backdrop-filter:blur(14px); color:var(--drone-ink); box-shadow:var(--shadow-soft); }
+    .scan-chip .scan-logo { width:44px; height:44px; border-radius:14px; }
+    .scan-chip strong { display:block; font-size:.82rem; letter-spacing:.08em; }
+    .scan-chip small { display:block; color:var(--drone-sub); font-size:.78rem; }
+    .ticker { padding:14px 0; overflow:hidden; border-block:1px solid var(--line); background:color-mix(in srgb, var(--surface-strong) 40%, transparent); position:relative; z-index:1; }
+    .ticker-track { display:flex; width:max-content; animation:ticker 48s linear infinite; }
+    .ticker-set { display:flex; align-items:center; gap:clamp(16px, 2vw, 28px); padding-right:clamp(16px, 2vw, 28px); }
+    .ticker-set span { font-size:clamp(1rem, 1.6vw, 1.35rem); font-weight:900; letter-spacing:.06em; line-height:1; white-space:nowrap; text-transform:uppercase; }
+    .ticker-set span:nth-child(4n+3) { color:var(--muted); }
+    .ticker-set span:nth-child(4n+1) { background:linear-gradient(92deg, var(--cyan), var(--blue) 55%, var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .ticker-set i { width:7px; height:7px; flex:0 0 auto; border-radius:50%; background:var(--success); box-shadow:0 0 12px var(--success); }
+    .ticker:hover .ticker-track { animation-play-state:paused; }
+    @keyframes ticker { to { transform:translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation:none; } }
+    .vision { padding:120px 0; background:radial-gradient(ellipse at 20% 30%, color-mix(in srgb, var(--cyan) 12%, transparent), transparent 60%), radial-gradient(ellipse at 85% 80%, color-mix(in srgb, var(--violet) 12%, transparent), transparent 55%); }
+    .vision h2 { font-size:clamp(2.6rem, 6.4vw, 6.4rem); line-height:.94; letter-spacing:-.065em; margin-bottom:34px; max-width:20ch; }
+    .vision h2 span { background:linear-gradient(92deg, var(--cyan), var(--blue) 55%, var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .vision .lead { max-width:760px; margin-bottom:64px; }
+    .nums { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-strong); }
+    .num { padding:28px 28px 0 0; }
+    .num + .num { padding-left:28px; border-left:1px solid var(--line); }
+    .num strong { display:block; font-size:clamp(3.6rem, 8vw, 7.4rem); line-height:.9; letter-spacing:-.07em; background:linear-gradient(180deg, var(--ink), color-mix(in srgb, var(--ink) 35%, transparent)); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:12px; }
+    .num span { color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:.1em; font-size:.8rem; }
+    .reveal { opacity:0; transform:translateY(34px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay:var(--d, 0s); }
+    .reveal.in { opacity:1; transform:none; }
+    .showcase { display:grid; gap:28px; }
+    .show-row { display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
+    .show-row.reverse .show-media { order:2; }
+    .show-media { min-height:380px; border-radius:36px; position:relative; overflow:hidden; background:#071421 center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); isolation:isolate; }
+    .show-media::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, transparent 30%, var(--shade)); }
+    .media-air { background-image:var(--hero-img); --shade:var(--drone-shade); --glass:var(--drone-glass); --edge:var(--drone-edge); --tag-ink:var(--drone-ink); }
+    .media-sea { background-image:var(--boat-img); background-position:72% center; --shade:var(--boat-shade); --glass:var(--boat-glass); --edge:var(--boat-edge); --tag-ink:#fff; }
+    .media-land { background-image:var(--rover-img); background-position:70% center; --shade:var(--rover-shade); --glass:var(--rover-glass); --edge:var(--rover-edge); --tag-ink:#fff; }
+    .show-tag { position:absolute; left:20px; bottom:20px; z-index:4; padding:9px 14px; border-radius:999px; background:var(--glass); border:1px solid var(--edge); backdrop-filter:blur(12px); color:var(--tag-ink); font-weight:950; font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
+    .show-copy h3 { font-size:clamp(1.8rem, 3.4vw, 2.8rem); line-height:1.02; letter-spacing:-.05em; margin-bottom:14px; }
+    .show-copy .panel-list { margin-top:20px; }
+    .team-band { border-radius:44px; padding:clamp(34px, 5vw, 64px); min-height:520px; display:flex; flex-direction:column; justify-content:space-between; gap:40px; background:#14110e var(--rover-img) 70% center/cover no-repeat; border:1px solid var(--line-strong); box-shadow:var(--shadow); overflow:hidden; position:relative; color:white; isolation:isolate; }
+    .team-band::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, var(--rover-glass), var(--rover-shade) 50%, transparent), linear-gradient(0deg, var(--rover-shade), transparent 55%); }
+    .team-band .hud-grid { z-index:-1; }
+    .team-copy { max-width:640px; }
+    .team-copy h2 { font-size:clamp(2.2rem, 4.8vw, 4.4rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
+    .team-copy p { color:rgba(255,255,255,.78); font-size:1.08rem; }
+    .team-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .team-stat { padding:18px 20px; border-radius:22px; background:var(--rover-glass); border:1px solid var(--rover-edge); backdrop-filter:blur(12px); }
+    .team-stat small { display:flex; align-items:center; gap:8px; color:var(--rover-sub); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .team-stat small::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 14px var(--success); }
+    .team-stat strong { display:block; font-size:1.08rem; margin-bottom:4px; }
+    .team-stat span { color:rgba(255,255,255,.70); font-size:.9rem; }
     .ops-band { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--cyan) 7%, transparent), transparent); }
     .app-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
     .app-card { min-height:245px; padding:24px; border-radius:28px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
     .kicker { display:inline-flex; padding:7px 11px; border-radius:999px; background:color-mix(in srgb, var(--dragon) 12%, transparent); color:var(--blue); font-size:.72rem; letter-spacing:.09em; font-weight:950; text-transform:uppercase; margin-bottom:18px; }
     :root[data-theme="dark"] .kicker { color:var(--cyan); }
     .app-card h3 { margin-bottom:10px; font-size:1.12rem; }
-    .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--hero-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
-    .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(3,9,16,.88), rgba(3,9,16,.66), rgba(3,9,16,.12)); }
+    .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--boat-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
+    .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 55%, transparent); }
+    .mission-wide { border-radius:0; border-inline:0; min-height:clamp(460px, 72vh, 760px); display:flex; align-items:center; padding:clamp(56px, 8vw, 110px) 0; background-position:72% center; background-attachment:fixed; }
+    .mission-wide::before { background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 50%, transparent 85%), linear-gradient(0deg, var(--boat-shade), transparent 40%); }
+    .mission-wide .mission-copy h2 { font-size:clamp(2.8rem, 7vw, 7rem); line-height:.9; }
+    #mission { padding-inline:0; }
     .mission-copy { position:relative; max-width:720px; }
     .mission-copy h2 { font-size:clamp(2.3rem, 5vw, 5rem); line-height:.98; letter-spacing:-.06em; margin-bottom:18px; }
     .mission-copy p { color:rgba(255,255,255,.76); font-size:1.08rem; }
@@ -156,8 +230,10 @@
     .mobile-panel { display:none; }
     @media (max-width: 1040px) { .app-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width: 920px) {
-      .hero-grid, .split, .cards { grid-template-columns:1fr; }
-      .drone-stage { min-height:500px; }
+      .split, .cards, .show-row, .hero-row { grid-template-columns:1fr; gap:22px; }
+      .hero-row .hero-actions { justify-content:flex-start; }
+      .scan-chip { display:none; }
+      .show-row.reverse .show-media { order:0; }
       .nav-links, .actions .btn { display:none; }
       .menu-button { display:grid; }
       .mobile-panel { display:none; position:absolute; left:20px; right:20px; top:92px; padding:18px; border-radius:24px; background:var(--surface-strong); border:1px solid var(--line); box-shadow:var(--shadow); }
@@ -166,18 +242,25 @@
     @media (max-width: 640px) {
       .container { width:min(100% - 26px, 1180px); }
       .hero { padding-top:50px; }
-      .metrics, .app-grid { grid-template-columns:1fr; }
-      .drone-stage { min-height:430px; border-radius:32px; }
-      .scan-card { grid-template-columns:1fr; }
+      .hero-wide { padding-top:0; }
+      .hero-panes { height:52vh; }
+      .hero-panes .target { width:180px; height:180px; }
+      .pane-label { font-size:0; gap:0; padding:4px; }
+      .metrics, .app-grid, .team-stats, .nums { grid-template-columns:1fr; }
+      .num + .num { padding-left:0; border-left:0; border-top:1px solid var(--line); }
+      .num { padding-bottom:22px; }
+      .vision { padding:80px 0; }
+      .team-band { border-radius:32px; min-height:0; }
+      .show-media { min-height:260px; border-radius:28px; }
       .target { width:190px; height:190px; right:6%; }
       section { padding:64px 0; }
       .panel { padding:30px; border-radius:32px; }
+      .mission-wide { background-attachment:scroll; }
     }
   </style>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
   <div class="page">
     <header>
       <div class="container nav">
@@ -186,11 +269,11 @@
           <span class="brand-text">Basilisk <small>Systems</small></span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#domains">Domeny</a>
           <a href="#capabilities">Możliwości</a>
           <a href="#platform">Platforma</a>
           <a href="#operations">Operacje</a>
           <a href="#mission">Misja</a>
-          <a href="#contact">Kontakt</a>
         </nav>
         <div class="actions">
           <a href="/en/" aria-label="English">EN</a><a href="/pl/" aria-label="Polski">PL</a><a href="/fr/" aria-label="Français">FR</a>
@@ -203,69 +286,112 @@
         </div>
       </div>
       <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-        <a href="#capabilities">Możliwości</a><a href="#platform">Platforma</a><a href="#operations">Operacje</a><a href="#mission">Misja</a><a href="#contact">Kontakt</a>
+        <a href="#domains">Domeny</a><a href="#capabilities">Możliwości</a><a href="#platform">Platforma</a><a href="#operations">Operacje</a><a href="#mission">Misja</a><a href="#contact">Kontakt</a>
       </nav>
     </header>
     <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Systemy autonomiczne · wizja AI · bezpieczne operacje terenowe</div>
-            <h1>Basilisk tworzy inteligentne systemy lotnicze dla wymagającej autonomii.</h1>
-            <p class="lead">Projektujemy inteligencję dronów, odporne systemy percepcji i oprogramowanie misyjne dla zespołów, które potrzebują maszyn zdolnych widzieć, decydować i współdziałać w złożonych środowiskach.</p>
-            <div class="hero-actions"><a class="btn btn-primary" href="#platform">Poznaj platformę</a><a class="btn btn-ghost" href="#capabilities">Zobacz możliwości</a></div>
-            <div class="metrics" aria-label="Basilisk highlights">
-              <div class="metric"><strong>AI Perception</strong><span>Multi-sensor awareness, target recognition, and operator-grade situational context.</span></div>
-              <div class="metric"><strong>Field Ready</strong><span>Built for real deployments: resilient interfaces, secure telemetry, and fast mission iteration.</span></div>
-              <div class="metric"><strong>Modular Stack</strong><span>Autonomy, mapping, edge inference, and command layers that can evolve independently.</span></div>
-            </div>
+      <section class="hero hero-wide">
+        <div class="hero-panes" aria-hidden="true">
+          <div class="pane media-air"><span class="pane-label"><b>01</b>Powietrze · UAS</span></div><div class="pane media-sea"><span class="pane-label"><b>02</b>Morze · USV</span></div><div class="pane media-land"><span class="pane-label"><b>03</b>Ląd · UGV</span></div>
+          <div class="hud-grid"></div><div class="target"></div>
+          <div class="hero-fade"></div>
+        </div>
+        <div class="container hero-copy">
+          <div class="scan-chip"><span class="scan-logo" aria-hidden="true"></span><span><strong>BASILISK AUTONOMY CORE</strong><small>Fizyczna AI · powietrze · morze · ląd · warstwa dowodzenia</small></span></div>
+          <div class="eyebrow">Fizyczna AI · autonomia · powietrze · morze · ląd</div>
+          <h1>Fizyczna AI dla autonomii <span>w powietrzu, na morzu i na lądzie.</span></h1>
+          <div class="hero-row">
+            <p class="lead">Tworzymy inteligencję, która pozwala maszynom postrzegać, decydować i działać w realnym świecie — oprogramowanie autonomiczne, odporną percepcję i systemy misyjne dla platform powietrznych, morskich i lądowych.</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="#platform">Poznaj platformę</a><a class="btn btn-ghost" href="#domains">Zobacz domeny</a></div>
           </div>
-          <div class="drone-stage" aria-label="Basilisk drone system visual">
-            <div class="hud-grid" aria-hidden="true"></div><div class="target" aria-hidden="true"></div>
-            <div class="scan-card"><div class="scan-logo" aria-hidden="true"></div><div><strong>BASILISK SENTINEL CORE</strong><span>Live aerial perception · mission telemetry · operator command layer</span></div></div>
+          <div class="metrics" aria-label="Basilisk highlights">
+            <div class="metric"><strong>Fizyczna AI</strong><span>Modele rozumiejące świat fizyczny: percepcja, modele świata i sterowanie w czasie rzeczywistym.</span></div>
+            <div class="metric"><strong>Wielodomenowość</strong><span>Jeden rdzeń autonomii dla pojazdów powietrznych, morskich i lądowych — działających samodzielnie lub w zespole.</span></div>
+            <div class="metric"><strong>Gotowe do działania</strong><span>Stworzone do realnych wdrożeń: ograniczona łączność, trudne warunki i bezpieczne operacje.</span></div>
           </div>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track"><div class="ticker-set"><span>Fizyczna AI</span><i></i><span>Powietrze</span><i></i><span>Autonomia brzegowa</span><i></i><span>Morze</span><i></i><span>Wielodomenowość</span><i></i><span>Ląd</span><i></i><span>Współpraca międzydomenowa</span><i></i></div><div class="ticker-set"><span>Fizyczna AI</span><i></i><span>Powietrze</span><i></i><span>Autonomia brzegowa</span><i></i><span>Morze</span><i></i><span>Wielodomenowość</span><i></i><span>Ląd</span><i></i><span>Współpraca międzydomenowa</span><i></i></div></div></div>
+      <section id="domains">
+        <div class="container">
+          <div class="section-head"><h2>Jeden rdzeń autonomii. Każda domena.</h2><p>Basilisk wnosi fizyczną AI do każdej platformy, która się porusza. Ten sam stos percepcji, decyzji i dowodzenia dostosowuje się do fizyki, sensorów i misji każdego środowiska.</p></div>
+          <div class="cards">
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg></div><span class="kicker">BSP · autonomia powietrzna</span><h3>Powietrze</h3><p>Autonomiczne drony i systemy powietrzne do inspekcji, obserwacji, mapowania i logistyki — loty poza zasięgiem wzroku dzięki inteligencji pokładowej.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 6c1.5 1.2 3 1.2 4.5 0S9.5 4.8 11 6s3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 12c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 18c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/></svg></div><span class="kicker">USV · UUV · domena morska</span><h3>Morze</h3><p>Bezzałogowe jednostki nawodne i podwodne do świadomości sytuacyjnej na morzu, ochrony portów i obiektów offshore, pomiarów hydrograficznych i długotrwałych patroli.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="m3 20 6-11 4 6 3-4 5 9Z"/><circle cx="17" cy="5" r="2"/></svg></div><span class="kicker">UGV · robotyka naziemna</span><h3>Ląd</h3><p>Autonomiczne pojazdy i roboty naziemne poruszające się w terenie i złożonym środowisku — do logistyki, ochrony perymetru i operacji w strefach niebezpiecznych.</p></article>
+          </div>
+        </div>
+      </section>
+      <section id="fleet">
+        <div class="container">
+          <div class="section-head"><h2>Stworzone dla powietrza, morza i lądu.</h2><p>Ten sam rdzeń autonomii Basilisk działa na każdej platformie — dostrojony do fizyki, sensorów i zagrożeń każdego środowiska.</p></div>
+          <div class="showcase">
+            <article class="show-row">
+              <div class="show-media media-air" role="img" aria-label="Powietrze"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Powietrze · UAS</span></div>
+              <div class="show-copy"><span class="kicker">BSP · autonomia powietrzna</span><h3>Oczy ponad misją.</h3><p>Autonomiczne drony, które obserwują, inspekcjonują i śledzą z góry — dzieląc się obrazem z każdym innym zasobem floty.</p><ul class="panel-list"><li>Misje poza zasięgiem wzroku z percepcją pokładową</li><li>Nawigacja bez GNSS i omijanie przeszkód</li><li>Wideo na żywo, mapowanie i śledzenie obiektów</li></ul></div>
+            </article>
+            <article class="show-row reverse">
+              <div class="show-media media-sea" role="img" aria-label="Morze"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Morze · USV</span></div>
+              <div class="show-copy"><span class="kicker">USV · UUV · domena morska</span><h3>Stała obecność na morzu.</h3><p>Bezzałogowe jednostki nawodne, które patrolują, mierzą i eskortują na otwartych wodach — w dzień i w nocy, przy wysokiej fali.</p><ul class="panel-list"><li>Długotrwałe patrole i świadomość sytuacyjna na morzu</li><li>Fuzja danych z radaru, AIS i sensorów optoelektronicznych</li><li>Nawigacja zgodna z COLREG i unikanie kolizji</li></ul></div>
+            </article>
+            <article class="show-row">
+              <div class="show-media media-land" role="img" aria-label="Ląd"><div class="hud-grid" aria-hidden="true"></div><span class="show-tag">Ląd · UGV</span></div>
+              <div class="show-copy"><span class="kicker">UGV · robotyka naziemna</span><h3>Tam, gdzie kończą się drogi.</h3><p>Autonomiczne pojazdy naziemne, które przewożą, rozpoznają i zabezpieczają teren — w błocie, lesie i trudnym terenie.</p><ul class="panel-list"><li>Nawigacja terenowa w nieuporządkowanym środowisku</li><li>Autonomiczne zaopatrzenie i transport ładunków</li><li>Patrole perymetru i operacje w strefach niebezpiecznych</li></ul></div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="vision" class="vision">
+        <div class="container">
+          <div class="eyebrow">Nasza wizja</div>
+          <h2>Maszyny, które nie tylko się poruszają — <span>rozumieją świat, w którym działają.</span></h2>
+          <p class="lead">Następna dekada należy do fizycznej AI: inteligencji, która wychodzi z ekranu do realnego świata. Basilisk buduje rdzeń autonomii, dzięki któremu każdy pojazd — w powietrzu, na morzu czy na lądzie — postrzega, rozumuje i działa ramię w ramię z ludźmi.</p>
+          <div class="nums"><div class="num"><strong>1</strong><span>rdzeń autonomii</span></div><div class="num"><strong>3</strong><span>domeny: powietrze, morze, ląd</span></div><div class="num"><strong>24/7</strong><span>operacje w dzień i w nocy</span></div></div>
         </div>
       </section>
       <section id="capabilities">
         <div class="container">
-          <div class="section-head"><h2>Ostrzejszy system operacyjny dla lotu autonomicznego.</h2><p>Basilisk Systems to nie tylko strona o dronach. To marka strażnika: uważna warstwa inteligencji powietrznej dla infrastruktury, bezpieczeństwa, badań i robotyki nowej generacji.</p></div>
+          <div class="section-head"><h2>Warstwa inteligencji dla maszyn w świecie fizycznym.</h2><p>Basilisk Systems to firma fizycznej AI. Dajemy pojazdom i robotom zdolność postrzegania otoczenia, rozumowania i bezpiecznego działania — zawsze pod kontrolą człowieka.</p></div>
           <div class="cards">
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Vision Intelligence</h3><p>Computer vision pipelines for detection, classification, tracking, inspection, and anomaly discovery from aerial data.</p></article>
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="M5 5l14 14M19 5 5 19"/></svg></div><h3>Mission Control</h3><p>A command interface for planning, monitoring, replaying, and improving autonomous missions.</p></article>
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Secure Telemetry</h3><p>Encrypted data flow, fleet status, logs, alerts, and traceable events for accountable field operations.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Percepcja i modele świata</h3><p>Fuzja danych z kamer, radarów, lidarów, sonarów i termowizji — zamiana surowych sygnałów we wspólny, bieżący obraz otoczenia.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="M5 5l14 14M19 5 5 19"/></svg></div><h3>Silnik autonomii</h3><p>Nawigacja, planowanie i sterowanie dostosowujące się w czasie rzeczywistym do terenu, stanu morza, przestrzeni powietrznej i zmian misji — nawet bez GPS i łączności.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Bezpieczne dowodzenie i telemetria</h3><p>Szyfrowane łącza, status floty, logi i identyfikowalne zdarzenia dla odpowiedzialnych operacji w każdym pojeździe i domenie.</p></article>
           </div>
         </div>
       </section>
       <section id="platform">
         <div class="container split">
-          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>Od sygnału z drona do decyzji operacyjnej.</h2><p>The Basilisk platform connects the entire mission chain: sensors, edge models, flight events, human review, and post-mission intelligence.</p><ul class="panel-list"><li>Aircraft events, sensor streams, and mission logs in one readable chain.</li><li>Edge inference with human confirmation for high-trust decisions.</li><li>Deployment model ready for private servers and controlled environments.</li></ul></div>
+          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>Od sygnału z sensora do działania w świecie fizycznym.</h2><p>Platforma Basilisk łączy cały łańcuch misji w powietrzu, na morzu i na lądzie: sensory, modele brzegowe, zachowania autonomiczne, weryfikację przez człowieka i analizę po misji.</p><ul class="panel-list"><li>Zdarzenia pojazdów, strumienie danych z sensorów i logi misji w jednym czytelnym łańcuchu.</li><li>Inferencja brzegowa z potwierdzeniem człowieka dla decyzji wymagających zaufania.</li><li>Model wdrożenia gotowy na prywatne serwery i kontrolowane środowiska.</li></ul></div>
           <div class="features">
-            <div class="feature"><div class="feature-number">01</div><div><h3>Edge autonomy</h3><p>Run mission logic close to the aircraft, even when connectivity is imperfect.</p></div></div>
-            <div class="feature"><div class="feature-number">02</div><div><h3>Aerial intelligence</h3><p>Transform raw drone feeds into maps, alerts, object trails, and decision-ready summaries.</p></div></div>
-            <div class="feature"><div class="feature-number">03</div><div><h3>Human command</h3><p>Keep operators in control with clear overrides, audit trails, and readable mission state.</p></div></div>
-            <div class="feature"><div class="feature-number">04</div><div><h3>System integration</h3><p>Connect drone fleets with APIs, dashboards, infrastructure tools, and private cloud environments.</p></div></div>
+            <div class="feature"><div class="feature-number">01</div><div><h3>Autonomia brzegowa</h3><p>Percepcja i podejmowanie decyzji bezpośrednio na pojeździe, nawet przy ograniczonej lub zakłóconej łączności.</p></div></div>
+            <div class="feature"><div class="feature-number">02</div><div><h3>Współpraca międzydomenowa</h3><p>Koordynacja zasobów powietrznych, morskich i lądowych jako jednego zespołu ze wspólnym obrazem operacyjnym.</p></div></div>
+            <div class="feature"><div class="feature-number">03</div><div><h3>Dowodzenie przez człowieka</h3><p>Operator zawsze ma kontrolę dzięki czytelnym nadpisaniom, ścieżkom audytu i przejrzystemu stanowi misji.</p></div></div>
+            <div class="feature"><div class="feature-number">04</div><div><h3>Integracja systemów</h3><p>Integracja z istniejącymi pojazdami, sensorami, systemami C2, API i prywatną chmurą.</p></div></div>
           </div>
         </div>
       </section>
+      <section id="teaming">
+        <div class="container"><div class="team-band" role="img" aria-label="Współpraca międzydomenowa"><div class="hud-grid" aria-hidden="true"></div><div class="team-copy"><div class="eyebrow">Współpraca międzydomenowa</div><h2>Jeden obraz operacyjny we wszystkich domenach.</h2><p>Pojazdy powietrzne, morskie i lądowe dzielą percepcję i zamiar w czasie rzeczywistym — operator dowodzi jednym zgranym zespołem, a nie osobnymi maszynami.</p></div><div class="team-stats"><div class="team-stat"><small>Powietrze</small><strong>Obserwacja</strong><span>Śledzenie obszaru zainteresowania</span></div><div class="team-stat"><small>Morze</small><strong>Patrol</strong><span>Utrzymanie sektora</span></div><div class="team-stat"><small>Ląd</small><strong>Zaopatrzenie</strong><span>W drodze do punktu</span></div></div></div></div>
+      </section>
       <section id="operations" class="ops-band">
         <div class="container">
-          <div class="section-head center"><h2>Projektowane dla zespołów działających poza laboratorium.</h2><p>The visual identity uses the day/night drone images as a product metaphor: bright operational clarity by day, stealth-grade awareness by night.</p></div>
+          <div class="section-head center"><h2>Projektowane dla zespołów działających poza laboratorium.</h2><p>Wszędzie tam, gdzie maszyny muszą działać samodzielnie — w powietrzu, na wodzie czy na lądzie — Basilisk zamienia autonomię w niezawodną zdolność.</p></div>
           <div class="app-grid">
-            <article class="app-card"><span class="kicker">Asset Intel</span><h3>Infrastructure</h3><p>Inspection and monitoring for energy, logistics, industrial assets, and remote facilities.</p></article>
-            <article class="app-card"><span class="kicker">Sentinel Mode</span><h3>Security</h3><p>Aerial overwatch, perimeter intelligence, event detection, and rapid situational assessment.</p></article>
-            <article class="app-card"><span class="kicker">Autonomy Lab</span><h3>Research</h3><p>Experimental autonomy, multi-agent coordination, mapping, and field robotics prototyping.</p></article>
-            <article class="app-card"><span class="kicker">Fleet Ops</span><h3>Logistics</h3><p>Fleet status, route intelligence, area scanning, and operations support for mobile teams.</p></article>
+            <article class="app-card"><span class="kicker">Asset Intel</span><h3>Infrastruktura</h3><p>Inspekcja i monitoring energetyki, rurociągów, portów, obiektów offshore i odległych instalacji.</p></article>
+            <article class="app-card"><span class="kicker">Sentinel Mode</span><h3>Bezpieczeństwo i obronność</h3><p>Wielodomenowy nadzór, rozpoznanie perymetru i granic oraz szybka ocena sytuacji.</p></article>
+            <article class="app-card"><span class="kicker">Maritime Ops</span><h3>Domena morska</h3><p>Patrole przybrzeżne i offshore, pomiary podwodne i stała świadomość sytuacyjna na morzu.</p></article>
+            <article class="app-card"><span class="kicker">Fleet Ops</span><h3>Logistyka</h3><p>Autonomiczne dostawy i zaopatrzenie drogą powietrzną, morską i lądową dla mobilnych zespołów.</p></article>
           </div>
         </div>
       </section>
       <section id="mission">
-        <div class="container"><div class="mission-box"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>Basilisk obserwuje, uczy się i raportuje.</h2><p>Our mission is to make aerial robotics more useful, more trusted, and easier to deploy in serious environments. We combine AI engineering with pragmatic field software so teams can move from prototype to capability faster.</p></div></div></div>
+        <div class="mission-box mission-wide"><div class="container"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>Basilisk obserwuje, uczy się i działa.</h2><p>Naszą misją jest wyprowadzenie fizycznej AI z laboratorium do realnego świata — tak, by systemy autonomiczne były bardziej użyteczne, godne zaufania i łatwiejsze do wdrożenia w wymagających środowiskach w powietrzu, na morzu i na lądzie.</p></div></div></div>
       </section>
       <section id="contact" class="cta">
-        <div class="container"><div class="cta-box"><h2>Zbuduj następną warstwę inteligencji powietrznej z Basilisk.</h2><p>Porozmawiajmy o autonomii, wizji dronowej, bezpiecznych wdrożeniach i systemach misyjnych.</p><a class="btn btn-primary" href="mailto:technology@spectrumai.pl">technology@spectrumai.pl</a></div></div>
+        <div class="container"><div class="cta-box"><h2>Zbuduj z Basilisk swoją następną zdolność autonomiczną.</h2><p>Porozmawiajmy o fizycznej AI, autonomii i systemach misyjnych dla Twoich platform powietrznych, morskich i lądowych.</p><a class="btn btn-primary" href="mailto:technology@spectrumai.pl">technology@spectrumai.pl</a></div></div>
       </section>
     </main>
-    <footer><div class="container footer-inner"><div>© 2026 Basilisk Systems. All rights reserved.</div><div>AI drone intelligence · autonomy · secure mission systems</div></div></footer>
+    <footer><div class="container footer-inner"><div>© 2026 Basilisk Systems. Wszelkie prawa zastrzeżone.</div><div>Fizyczna AI · autonomia · powietrze · morze · ląd</div></div></footer>
   </div>
   <script>
     const root = document.documentElement;
@@ -279,6 +405,14 @@
     const menu = document.getElementById('mobilePanel');
     document.getElementById('menuToggle').addEventListener('click', () => menu.classList.toggle('open'));
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.section-head, .vision h2, .vision .lead, .num, .card, .show-row, .feature, .panel, .team-band, .app-card, .mission-copy, .cta-box').forEach(el => {
+        const i = [...el.parentElement.children].indexOf(el);
+        el.style.setProperty('--d', Math.min(i, 4) * 0.08 + 's');
+        el.classList.add('reveal'); io.observe(el);
+      });
+    }
   </script>
 </body>
 </html>
