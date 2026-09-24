@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+	<meta name="generator" content="Hugo 0.148.2">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Basilisk Systems builds AI drone intelligence, autonomous mission software, and secure aerial operations platforms." />
-  <title>Basilisk conçoit des systèmes aériens intelligents pour l’autonomie exigeante. | Basilisk Systems</title>
+  <meta name="description" content="Basilisk Systems développe l’IA physique et l’autonomie pour l’air, la mer et la terre — perception, logiciels d’autonomie et systèmes de mission sécurisés." />
+  <title>Basilisk conçoit l’IA physique pour l’autonomie dans les airs, en mer et sur terre. | Basilisk Systems</title>
   <style>
     :root {
       color-scheme: light;
@@ -123,7 +124,7 @@
     .card { padding:30px; border-radius:30px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); position:relative; overflow:hidden; }
     .card::before { content:""; position:absolute; width:160px; height:160px; right:-70px; top:-70px; border-radius:50%; background:radial-gradient(circle, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 68%); }
     .card h3 { position:relative; font-size:1.22rem; margin-bottom:12px; }
-    .card p { position:relative; }
+    .card p, .card .kicker { position:relative; }
     .icon { width:56px; height:56px; border-radius:19px; display:grid; place-items:center; margin-bottom:22px; background:color-mix(in srgb, var(--cyan) 12%, transparent); border:1px solid color-mix(in srgb, var(--cyan) 16%, transparent); }
     .icon svg { width:29px; height:29px; stroke:var(--cyan); fill:none; stroke-width:2; }
     .split { display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; align-items:center; }
@@ -186,11 +187,11 @@
           <span class="brand-text">Basilisk <small>Systems</small></span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#domains">Domaines</a>
           <a href="#capabilities">Capacités</a>
           <a href="#platform">Plateforme</a>
           <a href="#operations">Opérations</a>
           <a href="#mission">Mission</a>
-          <a href="#contact">Contact</a>
         </nav>
         <div class="actions">
           <a href="/en/" aria-label="English">EN</a><a href="/pl/" aria-label="Polski">PL</a><a href="/fr/" aria-label="Français">FR</a>
@@ -203,69 +204,79 @@
         </div>
       </div>
       <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-        <a href="#capabilities">Capacités</a><a href="#platform">Plateforme</a><a href="#operations">Opérations</a><a href="#mission">Mission</a><a href="#contact">Contact</a>
+        <a href="#domains">Domaines</a><a href="#capabilities">Capacités</a><a href="#platform">Plateforme</a><a href="#operations">Opérations</a><a href="#mission">Mission</a><a href="#contact">Contact</a>
       </nav>
     </header>
     <main id="top">
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <div class="eyebrow">Systèmes autonomes · vision IA · opérations terrain sécurisées</div>
-            <h1>Basilisk conçoit des systèmes aériens intelligents pour l’autonomie exigeante.</h1>
-            <p class="lead">Nous développons l’intelligence drone, des piles de perception robustes et des logiciels de mission pour les équipes qui ont besoin de machines capables de voir, décider et coordonner.</p>
-            <div class="hero-actions"><a class="btn btn-primary" href="#platform">Explorer la plateforme</a><a class="btn btn-ghost" href="#capabilities">Voir les capacités</a></div>
+            <div class="eyebrow">IA physique · autonomie · air · mer · terre</div>
+            <h1>L’IA physique pour l’autonomie <span>air, mer &amp; terre.</span></h1>
+            <p class="lead">Nous développons l’intelligence qui permet aux machines de percevoir, décider et agir dans le monde réel — logiciels d’autonomie, perception robuste et systèmes de mission pour plateformes aériennes, maritimes et terrestres.</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="#platform">Explorer la plateforme</a><a class="btn btn-ghost" href="#domains">Voir nos domaines</a></div>
             <div class="metrics" aria-label="Basilisk highlights">
-              <div class="metric"><strong>AI Perception</strong><span>Multi-sensor awareness, target recognition, and operator-grade situational context.</span></div>
-              <div class="metric"><strong>Field Ready</strong><span>Built for real deployments: resilient interfaces, secure telemetry, and fast mission iteration.</span></div>
-              <div class="metric"><strong>Modular Stack</strong><span>Autonomy, mapping, edge inference, and command layers that can evolve independently.</span></div>
+              <div class="metric"><strong>IA physique</strong><span>Des modèles qui comprennent le monde physique : perception, modèles du monde et contrôle en temps réel.</span></div>
+              <div class="metric"><strong>Multi-domaine</strong><span>Un cœur d’autonomie unique pour véhicules aériens, maritimes et terrestres — seuls ou en équipe.</span></div>
+              <div class="metric"><strong>Prêt pour le terrain</strong><span>Conçu pour de vrais déploiements : communications dégradées, environnements difficiles, opérations sécurisées.</span></div>
             </div>
           </div>
-          <div class="drone-stage" aria-label="Basilisk drone system visual">
+          <div class="drone-stage" aria-label="Basilisk autonomous system visual">
             <div class="hud-grid" aria-hidden="true"></div><div class="target" aria-hidden="true"></div>
-            <div class="scan-card"><div class="scan-logo" aria-hidden="true"></div><div><strong>BASILISK SENTINEL CORE</strong><span>Live aerial perception · mission telemetry · operator command layer</span></div></div>
+            <div class="scan-card"><div class="scan-logo" aria-hidden="true"></div><div><strong>BASILISK AUTONOMY CORE</strong><span>IA physique · air · mer · terre · couche de commandement</span></div></div>
+          </div>
+        </div>
+      </section>
+      <section id="domains">
+        <div class="container">
+          <div class="section-head"><h2>Un cœur d’autonomie. Tous les domaines.</h2><p>Basilisk apporte l’IA physique à toute plateforme mobile. La même pile de perception, de décision et de commandement s’adapte à la physique, aux capteurs et aux missions de chaque environnement.</p></div>
+          <div class="cards">
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg></div><span class="kicker">UAS · autonomie aérienne</span><h3>Air</h3><p>Drones et systèmes aériens autonomes pour l’inspection, la surveillance, la cartographie et la logistique — vols hors vue grâce à l’intelligence embarquée.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 6c1.5 1.2 3 1.2 4.5 0S9.5 4.8 11 6s3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 12c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M2 18c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/></svg></div><span class="kicker">USV · UUV · maritime</span><h3>Mer</h3><p>Navires de surface et sous-marins sans équipage pour la surveillance maritime, la sécurité portuaire et offshore, les levés hydrographiques et les patrouilles longue endurance.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="m3 20 6-11 4 6 3-4 5 9Z"/><circle cx="17" cy="5" r="2"/></svg></div><span class="kicker">UGV · robotique terrestre</span><h3>Terre</h3><p>Véhicules et robots terrestres autonomes évoluant en tout-terrain et en milieu complexe pour la logistique, la sécurité périmétrique et les zones dangereuses.</p></article>
           </div>
         </div>
       </section>
       <section id="capabilities">
         <div class="container">
-          <div class="section-head"><h2>Un système d’exploitation plus net pour le vol autonome.</h2><p>Basilisk Systems n’est pas seulement un site de drones. C’est une marque sentinelle: une couche d’intelligence aérienne pour l’infrastructure, la sécurité, la recherche et la robotique de nouvelle génération.</p></div>
+          <div class="section-head"><h2>La couche d’intelligence des machines dans le monde physique.</h2><p>Basilisk Systems est une entreprise d’IA physique. Nous donnons aux véhicules et aux robots la capacité de percevoir leur environnement, de raisonner et d’agir en sécurité — sous le contrôle permanent de l’humain.</p></div>
           <div class="cards">
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Vision Intelligence</h3><p>Computer vision pipelines for detection, classification, tracking, inspection, and anomaly discovery from aerial data.</p></article>
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="M5 5l14 14M19 5 5 19"/></svg></div><h3>Mission Control</h3><p>A command interface for planning, monitoring, replaying, and improving autonomous missions.</p></article>
-            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Secure Telemetry</h3><p>Encrypted data flow, fleet status, logs, alerts, and traceable events for accountable field operations.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Perception &amp; modèles du monde</h3><p>Fusion multi-capteurs — caméras, radar, lidar, sonar et thermique — pour transformer les signaux bruts en une compréhension partagée et en direct de l’environnement.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="M5 5l14 14M19 5 5 19"/></svg></div><h3>Moteur d’autonomie</h3><p>Navigation, planification et contrôle qui s’adaptent en temps réel au terrain, à l’état de la mer, à l’espace aérien et à la mission — même sans GPS ni connexion.</p></article>
+            <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Commandement &amp; télémétrie sécurisés</h3><p>Liaisons chiffrées, état de la flotte, journaux et événements traçables pour des opérations responsables sur chaque véhicule et domaine.</p></article>
           </div>
         </div>
       </section>
       <section id="platform">
         <div class="container split">
-          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>Du signal drone à la décision opérationnelle.</h2><p>The Basilisk platform connects the entire mission chain: sensors, edge models, flight events, human review, and post-mission intelligence.</p><ul class="panel-list"><li>Aircraft events, sensor streams, and mission logs in one readable chain.</li><li>Edge inference with human confirmation for high-trust decisions.</li><li>Deployment model ready for private servers and controlled environments.</li></ul></div>
+          <div class="panel"><div class="eyebrow">Basilisk OS</div><h2>Du signal capteur à l’action physique.</h2><p>La plateforme Basilisk relie toute la chaîne de mission dans les airs, en mer et sur terre : capteurs, modèles embarqués, comportements autonomes, validation humaine et analyse post-mission.</p><ul class="panel-list"><li>Événements véhicules, flux capteurs et journaux de mission dans une chaîne lisible.</li><li>Inférence embarquée avec confirmation humaine pour les décisions critiques.</li><li>Modèle de déploiement prêt pour serveurs privés et environnements contrôlés.</li></ul></div>
           <div class="features">
-            <div class="feature"><div class="feature-number">01</div><div><h3>Edge autonomy</h3><p>Run mission logic close to the aircraft, even when connectivity is imperfect.</p></div></div>
-            <div class="feature"><div class="feature-number">02</div><div><h3>Aerial intelligence</h3><p>Transform raw drone feeds into maps, alerts, object trails, and decision-ready summaries.</p></div></div>
-            <div class="feature"><div class="feature-number">03</div><div><h3>Human command</h3><p>Keep operators in control with clear overrides, audit trails, and readable mission state.</p></div></div>
-            <div class="feature"><div class="feature-number">04</div><div><h3>System integration</h3><p>Connect drone fleets with APIs, dashboards, infrastructure tools, and private cloud environments.</p></div></div>
+            <div class="feature"><div class="feature-number">01</div><div><h3>Autonomie embarquée</h3><p>Perception et décision directement sur le véhicule, même lorsque la connectivité est dégradée ou coupée.</p></div></div>
+            <div class="feature"><div class="feature-number">02</div><div><h3>Coopération multi-domaine</h3><p>Coordonner moyens aériens, maritimes et terrestres comme une seule équipe partageant une situation opérationnelle commune.</p></div></div>
+            <div class="feature"><div class="feature-number">03</div><div><h3>Commandement humain</h3><p>Garder les opérateurs aux commandes avec des reprises claires, des pistes d’audit et un état de mission lisible.</p></div></div>
+            <div class="feature"><div class="feature-number">04</div><div><h3>Intégration système</h3><p>Intégration avec véhicules, capteurs, systèmes C2, API et clouds privés existants.</p></div></div>
           </div>
         </div>
       </section>
       <section id="operations" class="ops-band">
         <div class="container">
-          <div class="section-head center"><h2>Conçu pour les équipes qui opèrent au-delà du laboratoire.</h2><p>The visual identity uses the day/night drone images as a product metaphor: bright operational clarity by day, stealth-grade awareness by night.</p></div>
+          <div class="section-head center"><h2>Conçu pour les équipes qui opèrent au-delà du laboratoire.</h2><p>Partout où les machines doivent opérer seules — dans le ciel, sur l’eau ou au sol — Basilisk transforme l’autonomie en capacité fiable.</p></div>
           <div class="app-grid">
-            <article class="app-card"><span class="kicker">Asset Intel</span><h3>Infrastructure</h3><p>Inspection and monitoring for energy, logistics, industrial assets, and remote facilities.</p></article>
-            <article class="app-card"><span class="kicker">Sentinel Mode</span><h3>Security</h3><p>Aerial overwatch, perimeter intelligence, event detection, and rapid situational assessment.</p></article>
-            <article class="app-card"><span class="kicker">Autonomy Lab</span><h3>Research</h3><p>Experimental autonomy, multi-agent coordination, mapping, and field robotics prototyping.</p></article>
-            <article class="app-card"><span class="kicker">Fleet Ops</span><h3>Logistics</h3><p>Fleet status, route intelligence, area scanning, and operations support for mobile teams.</p></article>
+            <article class="app-card"><span class="kicker">Asset Intel</span><h3>Infrastructures</h3><p>Inspection et surveillance de l’énergie, des pipelines, des ports, des actifs offshore et des sites isolés.</p></article>
+            <article class="app-card"><span class="kicker">Sentinel Mode</span><h3>Sécurité &amp; défense</h3><p>Surveillance multi-domaine, renseignement périmétrique et frontalier, évaluation rapide de la situation.</p></article>
+            <article class="app-card"><span class="kicker">Maritime Ops</span><h3>Maritime</h3><p>Patrouilles côtières et offshore, levés sous-marins et connaissance permanente du domaine maritime.</p></article>
+            <article class="app-card"><span class="kicker">Fleet Ops</span><h3>Logistique</h3><p>Livraison et ravitaillement autonomes par voies aérienne, maritime et terrestre pour les équipes mobiles.</p></article>
           </div>
         </div>
       </section>
       <section id="mission">
-        <div class="container"><div class="mission-box"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>Le basilic observe, apprend et rapporte.</h2><p>Our mission is to make aerial robotics more useful, more trusted, and easier to deploy in serious environments. We combine AI engineering with pragmatic field software so teams can move from prototype to capability faster.</p></div></div></div>
+        <div class="container"><div class="mission-box"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>Le basilic observe, apprend et agit.</h2><p>Notre mission : faire sortir l’IA physique du laboratoire pour l’amener dans le monde réel — rendre les systèmes autonomes plus utiles, plus fiables et plus faciles à déployer dans des environnements exigeants, dans les airs, en mer et sur terre.</p></div></div></div>
       </section>
       <section id="contact" class="cta">
-        <div class="container"><div class="cta-box"><h2>Construisez votre prochaine couche d’intelligence aérienne avec Basilisk.</h2><p>Parlons autonomie, vision drone, déploiements sécurisés et systèmes de mission.</p><a class="btn btn-primary" href="mailto:technology@spectrumai.pl">technology@spectrumai.pl</a></div></div>
+        <div class="container"><div class="cta-box"><h2>Construisez votre prochaine capacité autonome avec Basilisk.</h2><p>Parlons IA physique, autonomie et systèmes de mission pour vos plateformes aériennes, maritimes ou terrestres.</p><a class="btn btn-primary" href="mailto:technology@spectrumai.pl">technology@spectrumai.pl</a></div></div>
       </section>
     </main>
-    <footer><div class="container footer-inner"><div>© 2026 Basilisk Systems. All rights reserved.</div><div>AI drone intelligence · autonomy · secure mission systems</div></div></footer>
+    <footer><div class="container footer-inner"><div>© 2026 Basilisk Systems. Tous droits réservés.</div><div>IA physique · autonomie · air · mer · terre</div></div></footer>
   </div>
   <script>
     const root = document.documentElement;
