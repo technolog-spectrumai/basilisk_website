@@ -377,6 +377,16 @@
     .scan-chip .scan-logo { width:44px; height:44px; border-radius:14px; }
     .scan-chip strong { display:block; font-size:.82rem; letter-spacing:.08em; }
     .scan-chip small { display:block; color:var(--drone-sub); font-size:.78rem; }
+    .ticker { padding:26px 0; overflow:hidden; border-block:1px solid var(--line); background:color-mix(in srgb, var(--surface-strong) 40%, transparent); position:relative; z-index:1; }
+    .ticker-track { display:flex; width:max-content; animation:ticker 48s linear infinite; }
+    .ticker-set { display:flex; align-items:center; gap:clamp(22px, 3vw, 44px); padding-right:clamp(22px, 3vw, 44px); }
+    .ticker-set span { font-size:clamp(2.4rem, 6vw, 5.6rem); font-weight:950; letter-spacing:-.06em; line-height:1; white-space:nowrap; text-transform:uppercase; }
+    .ticker-set span:nth-child(4n+3) { color:transparent; -webkit-text-stroke:1.5px color-mix(in srgb, var(--ink) 55%, transparent); }
+    .ticker-set span:nth-child(4n+1) { background:linear-gradient(92deg, var(--cyan), var(--blue) 55%, var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .ticker-set i { width:clamp(14px, 1.6vw, 22px); height:clamp(14px, 1.6vw, 22px); flex:0 0 auto; border-radius:50%; background:var(--success); box-shadow:0 0 24px var(--success); }
+    .ticker:hover .ticker-track { animation-play-state:paused; }
+    @keyframes ticker { to { transform:translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation:none; } }
     .showcase { display:grid; gap:28px; }
     .show-row { display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center; }
     .show-row.reverse .show-media { order:2; }
@@ -497,6 +507,7 @@
           </div>
         </div>
       </section>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track"><div class="ticker-set"><span>{{ index $copy "stat1" }}</span><i></i><span>{{ index $copy "air" }}</span><i></i><span>{{ index $copy "feature1" }}</span><i></i><span>{{ index $copy "sea" }}</span><i></i><span>{{ index $copy "stat2" }}</span><i></i><span>{{ index $copy "land" }}</span><i></i><span>{{ index $copy "feature2" }}</span><i></i></div><div class="ticker-set"><span>{{ index $copy "stat1" }}</span><i></i><span>{{ index $copy "air" }}</span><i></i><span>{{ index $copy "feature1" }}</span><i></i><span>{{ index $copy "sea" }}</span><i></i><span>{{ index $copy "stat2" }}</span><i></i><span>{{ index $copy "land" }}</span><i></i><span>{{ index $copy "feature2" }}</span><i></i></div></div></div>
       <section id="domains">
         <div class="container">
           <div class="section-head"><h2>{{ index $copy "domTitle" }}</h2><p>{{ index $copy "domLead" }}</p></div>
