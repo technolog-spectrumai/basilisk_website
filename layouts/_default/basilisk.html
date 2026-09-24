@@ -292,9 +292,8 @@
     p { color: color-mix(in srgb, var(--ink) 68%, transparent); line-height: 1.7; }
     .page { position: relative; overflow: hidden; }
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-    .noise, .scanlines { pointer-events:none; position:fixed; inset:0; z-index:0; }
+    .noise { pointer-events:none; position:fixed; inset:0; z-index:0; }
     .noise { opacity:.16; background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,.5) 0 1px, transparent 1px); background-size: 9px 9px; mix-blend-mode: overlay; }
-    .scanlines { opacity:.08; background: repeating-linear-gradient(180deg, transparent 0 7px, var(--ink) 8px); }
     header { position: sticky; top: 0; z-index: 30; backdrop-filter: blur(22px); background: var(--header); border-bottom: 1px solid var(--line); }
     .nav { height: 82px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .brand { display:flex; align-items:center; gap:14px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
@@ -448,7 +447,6 @@
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
   <div class="page">
     <header>
       <div class="container nav">
