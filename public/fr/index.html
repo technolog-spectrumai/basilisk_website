@@ -212,6 +212,15 @@
     .kicker { display:inline-flex; padding:7px 11px; border-radius:999px; background:color-mix(in srgb, var(--dragon) 12%, transparent); color:var(--blue); font-size:.72rem; letter-spacing:.09em; font-weight:950; text-transform:uppercase; margin-bottom:18px; }
     :root[data-theme="dark"] .kicker { color:var(--cyan); }
     .app-card h3 { margin-bottom:10px; font-size:1.12rem; }
+    .founders { padding:72px 0; }
+    .founders .section-head { margin-bottom:28px; }
+    .founders .section-head h2 { font-size:clamp(2rem, 4vw, 3.4rem); margin-top:16px; margin-bottom:0; }
+    .founder-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .founder { display:flex; align-items:center; gap:14px; padding:16px 18px; border-radius:24px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-soft); }
+    .founder-avatar { flex:0 0 48px; width:48px; height:48px; border-radius:16px; display:grid; place-items:center; background:linear-gradient(135deg,var(--cyan),var(--blue) 55%,var(--violet)); color:white; font-weight:950; font-size:1.1rem; }
+    .founder h3 { font-size:1.05rem; margin-bottom:2px; }
+    .founder span { display:block; color:var(--muted); font-size:.82rem; line-height:1.4; }
+    .founder b { color:var(--ink-soft); font-weight:900; letter-spacing:.06em; }
     .mission-box { border-radius:44px; padding:clamp(36px, 6vw, 72px); background: #071421 var(--boat-img) center/cover no-repeat; box-shadow:var(--shadow); border:1px solid var(--line-strong); overflow:hidden; position:relative; color:white; }
     .mission-box::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--boat-glass), var(--boat-shade) 55%, transparent); }
     .mission-wide { border-radius:0; border-inline:0; min-height:clamp(460px, 72vh, 760px); display:flex; align-items:center; padding:clamp(56px, 8vw, 110px) 0; background-position:72% center; background-attachment:fixed; }
@@ -228,7 +237,7 @@
     footer { padding:34px 0; border-top:1px solid var(--line); background:color-mix(in srgb, var(--surface-strong) 68%, transparent); color:var(--muted); position:relative; z-index:2; }
     .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
     .mobile-panel { display:none; }
-    @media (max-width: 1040px) { .app-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width: 1040px) { .app-grid { grid-template-columns:repeat(2,1fr); } .founder-grid { grid-template-columns:repeat(2,1fr); } }
     @media (max-width: 920px) {
       .split, .cards, .show-row, .hero-row { grid-template-columns:1fr; gap:22px; }
       .hero-row .hero-actions { justify-content:flex-start; }
@@ -247,6 +256,7 @@
       .hero-panes .target { width:180px; height:180px; }
       .pane-label { font-size:0; gap:0; padding:4px; }
       .metrics, .app-grid, .team-stats, .nums { grid-template-columns:1fr; }
+      .founder-grid { grid-template-columns:1fr; }
       .num + .num { padding-left:0; border-left:0; border-top:1px solid var(--line); }
       .num { padding-bottom:22px; }
       .vision { padding:80px 0; }
@@ -387,8 +397,19 @@
       <section id="mission">
         <div class="mission-box mission-wide"><div class="container"><div class="mission-copy"><div class="eyebrow">Basilisk doctrine</div><h2>Le basilic observe, apprend et agit.</h2><p>Notre mission : faire sortir l’IA physique du laboratoire pour l’amener dans le monde réel — rendre les systèmes autonomes plus utiles, plus fiables et plus faciles à déployer dans des environnements exigeants, dans les airs, en mer et sur terre.</p></div></div></div>
       </section>
+      <section id="founders" class="founders">
+        <div class="container">
+          <div class="section-head"><div class="eyebrow">Fondateurs</div><h2>Les personnes derrière Basilisk.</h2></div>
+          <div class="founder-grid">
+            <article class="founder"><div class="founder-avatar" aria-hidden="true">J</div><div><h3>Jan</h3><span>Cofondateur</span><span><b>PL</b> · Pologne</span></div></article>
+            <article class="founder"><div class="founder-avatar" aria-hidden="true">P</div><div><h3>Peter</h3><span>Cofondateur</span><span><b>UK</b> · Royaume-Uni</span></div></article>
+            <article class="founder"><div class="founder-avatar" aria-hidden="true">M</div><div><h3>Michal</h3><span>Cofondateur</span><span><b>PL</b> · Pologne</span></div></article>
+            <article class="founder"><div class="founder-avatar" aria-hidden="true">I</div><div><h3>Iwona</h3><span>Cofondateur</span><span><b>PL</b> · Pologne</span></div></article>
+          </div>
+        </div>
+      </section>
       <section id="contact" class="cta">
-        <div class="container"><div class="cta-box"><h2>Construisez votre prochaine capacité autonome avec Basilisk.</h2><p>Parlons IA physique, autonomie et systèmes de mission pour vos plateformes aériennes, maritimes ou terrestres.</p><a class="btn btn-primary" href="mailto:technology@spectrumai.pl">technology@spectrumai.pl</a></div></div>
+        <div class="container"><div class="cta-box"><h2>Construisez votre prochaine capacité autonome avec Basilisk.</h2><p>Parlons IA physique, autonomie et systèmes de mission pour vos plateformes aériennes, maritimes ou terrestres.</p><a class="btn btn-primary" href="mailto:jan@basilisk-systems.com">jan@basilisk-systems.com</a></div></div>
       </section>
     </main>
     <footer><div class="container footer-inner"><div>© 2026 Basilisk Systems. Tous droits réservés.</div><div>IA physique · autonomie · air · mer · terre</div></div></footer>
@@ -407,7 +428,7 @@
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.section-head, .vision h2, .vision .lead, .num, .card, .show-row, .feature, .panel, .team-band, .app-card, .mission-copy, .cta-box').forEach(el => {
+      document.querySelectorAll('.section-head, .vision h2, .vision .lead, .num, .card, .show-row, .feature, .panel, .team-band, .app-card, .founder, .mission-copy, .cta-box').forEach(el => {
         const i = [...el.parentElement.children].indexOf(el);
         el.style.setProperty('--d', Math.min(i, 4) * 0.08 + 's');
         el.classList.add('reveal'); io.observe(el);
