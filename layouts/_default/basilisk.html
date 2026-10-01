@@ -649,7 +649,7 @@
         <div class="container">
           <div class="section-head"><div class="eyebrow">{{ index $copy "foundersEyebrow" }}</div><h2>{{ index $copy "foundersTitle" }}</h2></div>
           <div class="founder-grid">
-            {{- range (slice (dict "n" "Jan" "c" "PL") (dict "n" "Peter" "c" "UK") (dict "n" "Michal" "c" "PL") (dict "n" "Iwona" "c" "PL")) }}
+            {{- range (slice (dict "n" "Jan" "c" "PL") (dict "n" "Peter" "c" "UK") (dict "n" "Michał" "c" "PL") (dict "n" "Iwona" "c" "PL")) }}
             <article class="founder"><div class="founder-avatar" aria-hidden="true">{{ substr .n 0 1 }}</div><div><h3>{{ .n }}</h3><span>{{ index $copy "founderRole" }}</span><span><b>{{ .c }}</b> · {{ index $copy (printf "country%s" .c) }}</span></div></article>
             {{- end }}
           </div>
